@@ -1,0 +1,68 @@
+#GNB{
+    position: fixed;
+    z-index: 16;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f2f4f6;
+    background-color: #fff;
+}
+.NavigationTab-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 8px;
+}
+.NavigationTab-icon{
+    display: flex;
+    align-items: center;
+}
+.NavigationTab-name{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NotificationBadge{
+
+}
+.NotificationBadge{
+    position: absolute;
+    top: 1px;
+    right: calc(50% - 15px);
+    transform: translate(50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 0 4px;
+    border-radius: 100%;
+}
+.NotificationBadge.type-new{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    background-color: #f66;
+    color: #fff;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.NavigationTab-name{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NavigationTab-name.active{
+    font-weight: 700;
+    color: #212529;
+}
