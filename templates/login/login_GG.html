@@ -19,7 +19,66 @@
         .Header-link:hover {
         color: #00C4C4; /* wadiz 느낌 */
         }
+
+        .Popper-module_popperContent__c7057 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: max-content;
+        }
+
+        .Popper-module_popperBox__87bbd {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            position: absolute;
+            border: 1px solid #212529;
+            border-radius: 4px;
+            box-shadow: 0 3px 3px -1px #0a16461a;
+            background-color: #212529;
+            padding: 8px;
+            color: #fff;
+        }
+/*
+        @keyframes wadizFloat {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .pop-popBox {
+            position: relative;
+            animation: wadizFloat 1.8s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .pop-arrow {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #212529;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pop-popBox {
+                animation: none;
+            }
+        }*/
+
     </style>
+
+
 </head>
 
 <body>
@@ -29,7 +88,7 @@
             <div class="content-width-560 padding-y-80 padding-x-0">
                 <div id="Header" class="Header-container">
                <!-- 
-<a class="Header-link" href="https://www.wadiz.kr/home">
+                        <a class="Header-link" href="https://www.wadiz.kr/home">
                         <svg viewBox="0 0 115 40" xmlns="http://www.w3.org/2000/svg" width="128" class="artwork">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M79.2303 4.31213H82.098V33.2057H79.9234C78.9302 33.198 78.0489 32.5679 77.7216 31.6314C73.2514 34.8668 67.1648 34.7111 62.8664 31.2514C60.3092 29.1785 58.9162 25.997 59.1288 22.715C59.4285 18.7532 61.9662 15.3095 65.6651 13.8454C69.364 12.3813 73.5753 13.1535 76.512 15.8343V7.02642C76.512 5.52736 77.729 4.31213 79.2303 4.31213ZM70.6678 29.5821C73.92 29.4353 76.4445 26.6963 76.3218 23.4478C76.5035 21.3089 75.4635 19.25 73.6328 18.1247C71.8021 16.9994 69.4927 16.9994 67.662 18.1247C65.8313 19.25 64.7913 21.3089 64.973 23.4478C64.8506 26.7115 67.3995 29.4571 70.6678 29.5821ZM56.8183 33.2057H54.7524C53.7492 33.2095 52.854 32.5773 52.5234 31.6314C48.0532 34.8668 41.9666 34.7111 37.6682 31.2514C35.111 29.1785 33.718 25.997 33.9306 22.715C34.2096 18.7254 36.7588 15.2505 40.4841 13.7817C44.2094 12.3129 48.4483 13.1113 51.3818 15.8343C51.5217 14.4979 52.6198 13.4649 53.9641 13.405H56.8183V33.2057ZM45.388 29.5821H45.4152C48.6654 29.4354 51.1861 26.694 51.0556 23.4478C51.1781 20.1968 48.6435 17.4595 45.388 17.3271C42.1326 17.4595 39.5979 20.1968 39.7205 23.4478C39.5978 26.7014 42.1305 29.4426 45.388 29.5821ZM113.181 13.4186V16.2821L103.572 28.5778H113.168V33.2871H95.499V30.4371L105.122 18.1278H96.1242V16.1328C96.1242 14.6338 97.3412 13.4186 98.8425 13.4186H113.181ZM89.247 11.1928C87.3855 11.1928 85.8764 9.68597 85.8764 7.82713C85.8764 5.9683 87.3855 4.46142 89.247 4.46142C91.1086 4.46142 92.6177 5.9683 92.6177 7.82713C92.6177 9.68597 91.1086 11.1928 89.247 11.1928ZM28.562 13.4186H34.1888L27.5835 33.2193H21.9431L17.5803 20.5164L13.2175 33.2193H7.57712L0.985352 13.4186H6.59855L10.608 25.7143L14.0058 15.21C14.3824 14.1339 15.3923 13.4074 16.5338 13.3914H20.4752L24.5526 25.7143L28.562 13.4186ZM86.5288 33.2193L86.4744 16.1328C86.4744 14.6338 87.6914 13.4186 89.1927 13.4186H92.0605V33.2193H86.5288Z">
                             </path>
