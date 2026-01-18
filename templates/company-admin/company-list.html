@@ -13,7 +13,9 @@
         <!-- fontawesome 꾸며진 폰트 -->
         <!-- <link rel="stylesheet" href="style.css"> -->
         <!-- 유틸 css -->
-         <link rel="stylesheet" href="/static/css/common/util.css">
+        <link rel="stylesheet" href="/static/css/common/util.css">
+        <!-- ag그리드 css -->
+        <link rel="stylesheet" href="/static/css/common/ag-grid.css">
         <!-- 개별 css 스타일 -->
         <link rel="stylesheet" href="/static/css/company-admin/company-list.css">
     </head>
@@ -130,7 +132,7 @@
                                 <button id="syncCreation" type="button" class="btn btn-primary-outline">소재상태 새로고침</button>
                                 <button type="button" class="btn btn btn-secondary-outline btn-ico">
                                     <!-- <i class="ico ico-download"></i> -->
-                                     <img class="" src="/static/css/images/icon_magnifying-glass-solid-full.svg">
+                                     <img class="icon icon-download" src="/static/images/icon_download.svg">
                                     다운로드
                                 </button>
                             </div>
@@ -161,8 +163,10 @@
                                                                 <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 0px"></div>
                                                             </div>
                                                             <div class="ag-header-viewport" role="presentation">
-                                                                <div class="ag-header-container" role="rowgroup" style="width: 3450px; transform: translateX(0px)">
-                                                                    <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 3450px">
+                                                                                                           <!-- style="width: 3450px; transform: translateX(0px)" -->
+                                                                <div class="ag-header-container" role="rowgroup" style="width: 3620px; transform: translateX(0px)">
+                                                                                                                                               <!-- style="height: 68px; top: 0px; width: 3450px" -->
+                                                                    <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 3620px">
                                                                         <div
                                                                             class="ag-header-cell ag-center-aligned-header ag-focus-managed"
                                                                             role="columnheader"
@@ -409,7 +413,8 @@
                                                             <!-- AG Row Container topLeft -->
                                                             <div class="ag-pinned-left-floating-top ag-hidden" role="presentation"></div>
                                                             <!-- AG Row Container topCenter -->
-                                                            <div class="ag-floating-top-viewport" role="presentation"><div class="ag-floating-top-container" role="presentation" style="width: 3450px; transform: translateX(0px)"></div></div>
+                                                                                                                                                                                <!-- style="width: 3450px; transform: translateX(0px)" -->
+                                                            <div class="ag-floating-top-viewport" role="presentation"><div class="ag-floating-top-container" role="presentation" style="width: 3620px; transform: translateX(0px)"></div></div>
                                                             <!-- AG Row Container topRight -->
                                                             <div class="ag-pinned-right-floating-top ag-hidden" role="presentation"></div>
                                                             <!-- AG Row Container topFullWidth -->
