@@ -37,3 +37,8 @@
 .fc-3 {
     color: #adb5bd;
 }
+
+.w-100 {
+    width: 100px !important;
+    min-width: 100px !important;
+}
