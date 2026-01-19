@@ -1,0 +1,15 @@
+/* svg */
+.WithProps-icon{
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+.hidden{
+    overflow: hidden;
+}
+.none{
+    display: none;
+}
