@@ -801,16 +801,16 @@ element.style {
 
 /* 말풍선 */
 .Tooltip-module_tooltip__74452 {
+  text-align: left;
   position: absolute;
-  top: calc(100% + 8px);   /* 버튼 아래 */
-  right: 0;                /* 버튼 오른쪽 정렬 */
-  
-  max-width: 240px;
+  width: 288px;
+  top: 22px;
+  right: -4px;
   padding: 12px 14px;
-  border-radius: 8px;
-  background: #212529;
+  border-radius: 4px;
+  background: #343a40;
   color: #fff;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1.5;
   white-space: normal;
 
@@ -828,87 +828,13 @@ element.style {
   transform: translateY(0);
 }
 
-.Tooltip-module_tooltip__74452::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  right: 12px;
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent #212529 transparent;
-}
 
 
-.Tooltip-module_tooltip__74452 {
-  inset: auto !important;
-  transform: none !important;
-}
-
-
-.Tooltip-wrapper {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.Tooltip-module_tooltip__74452 {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-
-  max-width: 240px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  background: #212529;
-  color: #fff;
-  font-size: 13px;
-  line-height: 1.5;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: opacity .15s ease, transform .15s ease;
-  z-index: 100;
-}
-
-.Tooltip-wrapper.active .Tooltip-module_tooltip__74452 {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-
-.Tooltip-wrapper {
-  position: relative;   /* ⭐ 기준점 */
-
-}
-
-.Tooltip-module_tooltip__74452 {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
-    position: absolute;
-    z-index: 8;
-    box-sizing: border-box;
-    max-width: 288px;
-    padding: 12px;
-    border-radius: 4px;
-    color: #fff;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    white-space: normal;
-    background-color: #343a40;
-
-
-}
-
-.Tooltip-module_tooltip__74452 {
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
+    .Tooltip-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+    }
 
     </style>
 
@@ -1139,7 +1065,7 @@ element.style {
 
                              
 
-                                          <div class="Tooltip-module_tooltip__74452" id="Tooltip_2" role="tooltip" style="inset: 0px auto auto 0px; transform: translate(calc(-100% + 399px), 282px);">
+                                        <div class="Tooltip-module_tooltip__74452" id="Tooltip_2">
                                             이메일 또는 간편 로그인이 유지돼요. 보안을 위해 개인 기기에서 사용해 주세요.
                                         </div>
 
