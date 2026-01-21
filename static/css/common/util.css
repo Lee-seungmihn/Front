@@ -1,0 +1,44 @@
+.fz-36, .fz-32, .fz-30, .fz-28, .fz-24, .fz-20, .fz-18, .fz-16, .fz-14, .fz-12 {
+    vertical-align: middle;
+}
+
+.fz-36 {
+    font-size: 36px;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fc-1 {
+    color: #202428;
+}
+
+.fz-20 {
+    font-size: 20px;
+}
+
+.fc-1 {
+    color: #202428;
+}
+
+.v-top {
+    vertical-align: top !important;
+}
+
+.fz-12 {
+    font-size: 12px;
+}
+
+.fc-2 {
+    color: #495057;
+}
+
+.fc-3 {
+    color: #adb5bd;
+}
+
+.w-100 {
+    width: 100px !important;
+    min-width: 100px !important;
+}

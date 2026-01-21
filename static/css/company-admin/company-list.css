@@ -1,0 +1,303 @@
+/* 컨테이너 */
+.inner-content {
+    padding: 60px 52px 0px;
+    margin-left: 240px; /* 사이드바 넓이 */
+}
+
+/* .lnb ~ .inner-content {
+    margin-left: 240px;
+} */
+
+/* 목록 헤더 부분 */
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+/* 바디 부분 */
+.content-body {
+    padding-bottom: 48px;
+}
+
+.content-body {
+    min-height: 850px;
+}
+
+/* 탭 선택 */
+.comp-tab {
+    overflow: hidden;
+    border-bottom: 1px solid rgb(230, 234, 237);
+    padding: 0px 52px;
+    margin: 0px -52px 48px;
+}
+
+.comp-tab .tab {
+    float: left;
+    position: relative;
+    margin-right: 20px;
+    padding: 20px 5px;
+}
+
+.comp-tab .tab .tab-item {
+    font-size: 16px;
+    color: rgb(32, 36, 40);
+}
+
+.comp-tab .tab.selected .tab-item, .comp-tab .tab:hover .tab-item {
+    font-weight: 700;
+}
+
+.comp-tab .tab.selected::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: rgb(32, 36, 40);
+}
+
+/* 선택된 탭의 내용 */
+.comp-tab ~ .comp-tab-content.selected {
+    display: block;
+}
+
+.wrap-section {
+    margin-bottom: 52px;
+    background: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 234, 237);
+    border-image: initial;
+    border-radius: 3px;
+}
+
+.wrap-datagrid {
+    overflow: initial;
+}
+
+/* 조회 영역 */
+.wrap-filter .inner-filter {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    align-items: stretch;
+    padding: 24px 32px 24px 16px;
+    border-bottom: 1px solid rgb(230, 234, 237);
+}
+
+.box-left, .box-right {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrap-filter .inner-filter > .box-left {
+    width: calc(100% - 150px);
+}
+
+.wrap-filter .inner-filter > .box-right {
+    padding: 8px 0px;
+}
+
+.wrap-filter .item-filter {
+    display: inline-block;
+    margin: 8px 10px;
+}
+
+.wrap-filter .item-filter .filter-tit {
+    display: block;
+    vertical-align: middle;
+    margin: 0px 0px 8px 6px;
+}
+
+/* 날짜 선택 박스 */
+.comp-datepicker {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 226, 230);
+    border-image: initial;
+    border-radius: 3px;
+}
+
+.wrap-filter .item-filter .box-filter > *, .wrap-filter .item-filter .box-filter {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrap-filter .item-filter .box-filter > * {
+    margin: 0px 6px;
+}
+
+.comp-datepicker .inner-datepicker {
+    display: inline-block;
+    position: relative;
+    width: 360px;
+}
+
+/* 아이콘 이미지 */
+.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+.comp-datepicker .icon-calendar {
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    bottom: 0px;
+    z-index: 1;
+    margin: auto;
+    background: url(/static/images/icon-calendar.svg) no-repeat;
+}
+
+.tf-textarea, .tf-comm {
+    width: 300px;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #dde2e6;
+    font-size: 14px;
+    line-height: 38px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.comp-datepicker .tf-comm {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    min-width: 120px;
+    height: 38px;
+    padding-left: 44px;
+    padding-right: 0px;
+    line-height: 36px;
+    color: rgb(32, 36, 40);
+    letter-spacing: normal;
+    box-shadow: none;
+    cursor: pointer;
+    user-select: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: transparent;
+}
+
+.comp-datepicker .tf-comm.datepicker-range {
+    width: 310px;
+    padding-left: 52px;
+}
+
+/* 조회기간, 사용자 설정 영역 */
+.comp-datepicker .fc-2 {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    bottom: 0px;
+    width: 100px;
+    height: 13px;
+    text-align: center;
+    margin: auto;
+}
+
+.comp-datepicker .fc-2::before {
+    content: "(";
+    position: absolute;
+    left: 0px;
+}
+
+.comp-datepicker .fc-2::after {
+    content: ")";
+    position: absolute;
+    right: 0px;
+}
+
+/* 조회(submit) 버튼 */
+.btn {
+    display: inline-block;
+    min-width: 150px;
+    height: 40px;
+    padding: 0 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 41px;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-tertiary-mint {
+    background: #e7f9f9;
+    color: #00b2b2;
+}
+
+.wrap-filter .box-right .btn {
+    width: 150px;
+    height: 100%;
+    line-height: normal;
+}
+
+.btn-icon .icon {
+    width: 16px;
+    height: 16px;
+    margin-top: -4px;
+    margin-right: 8px;
+}
+
+.btn-tertiary-mint.btn-icon .icon-filter {
+    background: url(/static/images/icon_filter.svg) no-repeat;
+}
+
+/* 다운로드 버튼 영역 */
+.wrap-section .box-header, .wrap-section .box-footer, .wrap-section~.wrap-btn-group {
+    display: flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 32px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: space-between;
+}
+
+.wrap-section .box-header {
+    border-bottom: 1px solid #e6eaed;
+}
+
+
+.wrap-section .box-header .box-option, .wrap-section .box-footer .box-right, .wrap-btn-group .box-right {
+    margin-left: auto;
+}
+
+.btn-secondary-outline {
+    border: 1px solid #cdd3d8;
+    background: #fff;
+    color: #495057;
+}
+
+.wrap-section .box-header .box-tit>*, .wrap-section .box-header .box-option>*, .wrap-section .box-footer .box-left>*, .wrap-section .box-footer .box-right>* {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrap-tbl .tbl dl.vertical>dt .box-right>*, .wrap-section .box-header .box-option>*, .wrap-section .box-footer a~.btn, .wrap-section .box-footer .btn~a, .wrap-section .box-footer .btn~.btn, .wrap-section~.wrap-btn-group .btn~.btn {
+    margin-left: 12px;
+}
+
+.wrap-section .box-header .box-option>a .btn, .wrap-section .box-header .box-option>.btn, .wrap-section .box-header .box-tit>.btn {
+    min-width: 100px;
+}
+
+.btn-secondary-outline.btn-icon .icon-download {
+    background: url(/static/images/icon_download.svg) no-repeat 50% 50%;
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>기업 메인 - 거래목록</title>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+
+        <!-- 폰트 -->
+        <link rel="stylesheet" href="/static/css/common/font.css" />
+
+        <!-- 공통 css 스타일 -->
+        <link rel="stylesheet" href="/static/css/common/reset.css" />
+
+        <!-- fontawesome 꾸며진 폰트 -->
+        <!-- <link rel="stylesheet" href="style.css"> -->
+
+        <!-- 유틸 css -->
+        <link rel="stylesheet" href="/static/css/common/util.css" />
+
+        <!-- 개별 css 스타일 -->
+        <link rel="stylesheet" href="/static/css/company-admin/company-list.css" />
+    </head>
+    <body>
+        <!-- 컨테이너 -->
+        <div class="inner-content">
+            <!-- 목록 헤더 영역 -->
+            <div class="content-header">
+                <div class="box-tit">
+                    <h2 class="fz-36 fc-1 fw-bold">후불 결제 내역</h2>
+                </div>
+            </div>
+            <!-- 바디 영역 -->
+            <div class="content-body">
+                <!-- 탭 선택 영역 -->
+                <div class="comp-tab">
+                    <a class="tab selected" href="#">
+                        <span class="tab-item">일간 내역</span>
+                    </a>
+                    <a class="tab" href="#">
+                        <span class="tab-item">상세 내역</span>
+                    </a>
+                </div>
+
+                <!-- 선택된 탭의 내용 -->
+                <div class="comp-tab-content selected">
+                    <div class="wrap-section wrap-datagrid">
+                        <!-- 날짜 조회 영역 -->
+                        <form>
+                            <div class="wrap-filter">
+                                <div class="inner-filter">
+                                    <!-- 조회기간 -->
+                                    <div class="box-left">
+                                        <div class="item-filter">
+                                            <div class="filter-tit">
+                                                <p class="fz-12 fc-2">조회기간</p>
+                                            </div>
+                                            <!-- 날짜 선택 박스 -->
+                                            <div class="box-filter">
+                                                <div class="comp-datepicker">
+                                                    <div class="inner-datepicker">
+                                                        <!-- 캘린더 이미지 -->
+                                                         <i class="icon icon-calendar"></i>
+                                                        <input type="text" class="tf-comm datepicker-range" id="datepicker">
+                                                        <span class="fz-12 fc-2">
+                                                            사용자 설정
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-right">
+                                        <button type="submit" class="btn btn-tertiary-mint btn-icon">
+                                            <i class="icon icon-filter"></i>
+                                            조회
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="box-header">
+                            <div class="box-option">
+                               <button type="button" class="btn btn btn-secondary-outline btn-icon">
+                                <i class="icon icon-download"></i>
+                                다운로드
+                               </button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
