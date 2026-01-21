@@ -102,7 +102,6 @@ body {
     color: #868e96;
 }
 
-.NotificationBadge {}
 
 .NotificationBadge {
     position: absolute;
@@ -381,13 +380,6 @@ video {
     padding: 8px;
 }
 
-.StyledComponent_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-    padding: 8px;
-}
 
 a {
     cursor: pointer;
@@ -435,12 +427,29 @@ a {
     height: 18px;
 }
 
+
 .NotificationButton_container .NotificationButton_badge {
     position: absolute;
     top: -2px;
     right: -2px;
 }
 
+.WishButton_button path {
+    fill: #21252966;
+    transition: fill .25s ease-in-out;
+}
+
+.WishButton_button.is-active path {
+    fill: #f25555;
+}
+
+
+.WishButton_button path {
+    stroke: #f2f4f6;
+    stroke-width: 2px;
+    fill: #21252966;
+    transition: fill .25s ease-in-out;
+}
 
 .NotificationBadge_badge {
     display: inline-flex;
@@ -756,6 +765,14 @@ strong {
     cursor: pointer;
     gap: 2px;
 }
+
+.imgbettary{
+    max-width: 20%;
+    opacity: 0.9;
+
+}
+
+
 
 .MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_img {
     margin-bottom: 2px;
@@ -1245,9 +1262,10 @@ button {
     margin-top: 16px;
     width: 100%;
     gap: 6px;
+
 }
 
-.ReactModalPortal{
+.ReactModalPortal {
     display: none;
 }
 
@@ -1261,6 +1279,8 @@ button {
 .RollingBannerCard_navigationWrapper .RollingBannerCard_navigationDot.RollingBannerCard_currentIndex {
     background-color: #343a40;
 }
+
+
 
 .Section_container {
     position: relative;
@@ -1886,8 +1906,8 @@ button {
     will-change: transform;
 }
 
-.WishButton_button * {
-    pointer-events: none;
+.WishButton_button {
+    pointer-events: auto;
 }
 
 .WishView_container .WishView_list .WishView_intersection {
@@ -1916,5 +1936,3 @@ button {
     flex-wrap: wrap;
     overflow: hidden;
 }
-
-

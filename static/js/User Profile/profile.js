@@ -1,6 +1,10 @@
 const banner = document.querySelector("div.RollingBannerCard_bannerWrapper");
 const firstBanner = document.createElement("a");
 const lastBanner = document.createElement("a");
+const buttonDots = document.querySelectorAll("div.RollingBannerCard_navigationDot");
+
+let count = 1;
+let dotButtons = buttonDots[0];
 
 firstBanner.className = "RollingBannerCard_banner RollingBannerCard_rollingFirst";
 lastBanner.className = "RollingBannerCard_banner RollingBannerCard_hide";
@@ -25,14 +29,13 @@ banner.appendChild(firstBanner);
 banner.prepend(lastBanner);
 
 
-let count = 1;
+
 banner.style.transform = `translateX(-370px)`;
 
 setInterval(() => {
     count++;
     banner.style.transform = `translateX(-${370 * count}px)`;
     banner.style.transition = `transform 0.5s`;
-
     if (count === 4) {
         setTimeout(() => {
             banner.style.transition = `0s`;
@@ -40,6 +43,11 @@ setInterval(() => {
         }, 500);
         count = 1;
     }
+    buttonDots.forEach(dot => dot.classList.remove("RollingBannerCard_currentIndex"));
+    buttonDots[count - 1].classList.add("RollingBannerCard_currentIndex");
+
+
+    console.log(0);
 }, 2000);
 
 // const WishIconButtons = document.querySelectorAll("button[type=cbutton]");
@@ -77,6 +85,9 @@ setInterval(() => {
 // });
 
 
+const wishButtons = document.querySelectorAll(".WishIconButton_container");
+const toastAdd = document.querySelector(".Toast_container.toast-add");
+const toastRemove = document.querySelector(".Toast_container.toast-remove");
 
 function showToast(toast) {
     toast.classList.add("show");
@@ -84,11 +95,6 @@ function showToast(toast) {
         toast.classList.remove("show");
     }, 2000);
 }
-
-const wishButtons = document.querySelectorAll(".WishIconButton_container");
-const toastAdd = document.querySelector(".Toast_container.toast-add");
-const toastRemove = document.querySelector(".Toast_container.toast-remove");
-
 
 wishButtons.forEach(button => {
     button.addEventListener("click", (e) => {
@@ -118,3 +124,49 @@ closes.forEach(close => {
     })
 })
 
+
+const notificationBadges = document.querySelectorAll(".NotificationBadge_badge");
+
+notificationBadges.forEach(notificationBadge => {
+    notificationBadge.addEventListener("click", (e) => {
+        e.preventDefault(); 
+        notificationBadge.remove();      
+    });
+});
+
+const wishButtonremoves = document.querySelectorAll(".WishButton_button");
+const svgAdd = document.querySelector(".Toast_container.toast-add");
+const svgRemove = document.querySelector(".Toast_container.toast-remove");
+
+
+wishButtonremoves.forEach(button => {
+    button.addEventListener("click", () => {
+        const path = button.querySelector("svg path");
+        if (!path) return;
+
+        const currentFill = path.style.getPropertyValue("fill");
+
+        if (currentFill === "rgb(33, 37, 41, 0.4)" || currentFill === "#21252966") {
+            path.style.setProperty("fill", "#f66", "important"); 
+        } else {
+            path.style.setProperty("fill", "#21252966", "important"); 
+        }
+    });
+});
+
+function showwish(toast) {
+    toast.classList.add("show");
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
+
+wishButtonremoves.forEach(button => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const svg = button.querySelector("svg");
+        const isActive = svg.classList.toggle("WishIconButton_isActive");
+
+        showwish(isActive ? svgRemove : add);
+    });
+});
