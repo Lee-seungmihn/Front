@@ -1,670 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>기업 메인 - 목록</title>
+        <title>기업 메인 - 거래목록</title>
+
         <!-- favicon -->
-        <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
+
         <!-- 폰트 -->
-        <link rel="stylesheet" href="/static/css/common/font.css">
+        <link rel="stylesheet" href="/static/css/common/font.css" />
+
         <!-- 공통 css 스타일 -->
-        <link rel="stylesheet" href="/static/css/common/reset.css">
+        <link rel="stylesheet" href="/static/css/common/reset.css" />
+
         <!-- fontawesome 꾸며진 폰트 -->
         <!-- <link rel="stylesheet" href="style.css"> -->
+
         <!-- 유틸 css -->
-         <link rel="stylesheet" href="/static/css/common/util.css">
+        <link rel="stylesheet" href="/static/css/common/util.css" />
+
         <!-- 개별 css 스타일 -->
-        <link rel="stylesheet" href="/static/css/company-admin/company-list.css">
+        <link rel="stylesheet" href="/static/css/company-admin/company-list.css" />
     </head>
     <body>
+        <!-- 컨테이너 -->
         <div class="inner-content">
+            <!-- 목록 헤더 영역 -->
             <div class="content-header">
-                <div class="box-tit"><h2 class="fz-36 fc-1 fw-bold">캠페인 관리</h2></div>
+                <div class="box-tit">
+                    <h2 class="fz-36 fc-1 fw-bold">충전기 이용 내역</h2>
+                </div>
             </div>
+            <!-- 바디 영역 -->
             <div class="content-body">
-                <div>
+                <!-- 탭 선택 영역 -->
+                <div class="comp-tab">
+                    <a class="tab selected" href="#">
+                        <span class="tab-item">일간 내역</span>
+                    </a>
+                    <a class="tab" href="#">
+                        <span class="tab-item">주간 내역</span>
+                    </a>
+                    <a class="tab" href="#">
+                        <span class="tab-item">월간 내역</span>
+                    </a>
+                </div>
+
+                <!-- 선택된 탭의 내용 -->
+                <div class="comp-tab-content selected">
                     <section class="wrap-section wrap-datagrid">
-                        <div class="box-header">
-                            <div class="box-tit"><h2 class="fz-20 fc-1 fw-bold">캠페인 리스트</h2></div>
-                        </div>
-                        <div class="wrap-filter">
-                            <div class="inner-filter">
-                                <div class="box-left">
-                                    <div class="item-filter v-top">
-                                        <div class="filter-tit"><p class="fz-12 fc-2">조회기간</p></div>
-                                        <div class="box-filter">
-                                            <div class="comp-datepicker">
-                                                <div class="inner-datepicker">
-                                                    <!-- 캘린더 아이콘 -->
-                                                    <!-- <i class="fa-regular fa-calendar" style="color: #7d7d7d;"></i>/ -->
-                                                     <img class="icon icon-calendar" src="/static/images/icon-calendar.svg">
-                                                    <input type="text" class="tf-comm datepicker-range right" id="datepicker" readonly="" />
-                                                    <span class="fz-12 fc-2" id="datepickerSpan">최근 30일</span>
-                                                </div>
-                                                <!-- 좌 우 버튼 -->
-                                                <button type="button" class="btn btn-prev">
-                                                    <img src="/static/images/icon_arrow_left.svg" >
-                                                </button>
-                                                <button type="button" class="btn btn-next">
-                                                    <img src="/static/images/icon_arrow_right.svg">
-                                                </button>
+                        <!-- 날짜 조회 영역 -->
+                        <form>
+                            <div class="wrap-filter">
+                                <div class="inner-filter">
+                                    <!-- 조회기간 -->
+                                    <div class="box-left">
+                                        <div class="item-filter">
+                                            <div class="filter-tit">
+                                                <p class="fz-12 fc-2">조회일자</p>
                                             </div>
-                                        </div>
-                                        <div class="filter-desc">
-                                            <p class="fz-12 fc-3">
-                                                <span style="font-weight: 700; color: rgb(0, 196, 196)">조회된 캠페인이 없나요? 조회기간과 캠페인 기간이 하루라도 겹쳐야 성과가 조회됩니다.</span>
-                                                <br />
-                                                캠페인 시작일 또는 종료일이 ‘조회기간’에 포함되도록 기간을 설정해 주세요.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="item-filter">
-                                        <div class="filter-tit"><p class="fz-12 fc-2">검색조건</p></div>
-                                        <div class="box-filter">
-                                            <select id="type" class="select2-single select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                                <option selected=""></option>
-                                                <option value="campNm">캠페인명</option>
-                                                <option value="campId">캠페인ID</option>
-                                                <option value="adTitle01">소재제목</option>
-                                                <option value="creationId">소재ID</option>
-                                            </select>
-                                            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 150px">
-                                                <span class="selection">
-                                                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-type-container">
-                                                        <span class="select2-selection__rendered" id="select2-type-container"><span class="select2-selection__placeholder">선택하세요</span></span>
-                                                        <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                                    </span>
-                                                </span>
-                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                            </span>
-                                        </div>
-                                        <div class="box-filter">
-                                            <div class="input-group comp-search">
-                                                <div class="inner-input-group">
-                                                    <input id="keyword" type="text" class="tf-comm" placeholder="검색어를 입력해 주세요." value="" />
-                                                    <!-- <i class="ico ico-search"></i> -->
-                                                    <img class="icon icon-search" src="/static/images/icon_search.svg">
+                                            <!-- 날짜 선택 박스 -->
+                                            <div class="box-filter">
+                                                <div class="comp-datepicker">
+                                                    <div class="inner-datepicker">
+                                                        <!-- 캘린더 이미지 -->
+                                                         <i class="icon icon-calendar"></i>
+                                                        <input type="text" class="tf-comm datepicker-range" id="datepicker">
+                                                        <span class="fz-12 fc-2">
+                                                            사용자 설정
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="box-filter"><button type="button" class="btn btn-primary w-100">검색</button></div>
                                     </div>
-                                    <div class="item-filter">
-                                        <div class="filter-tit"><p class="fz-12 fc-2">캠페인 상태</p></div>
-                                        <div class="box-filter">
-                                            <select id="statusList" class="select2-single select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                                <option value="NONE">전체</option>
-                                                <option value="temp" label="temp">임시저장</option>
-                                                <option value="insp_req" label="insp_req">검수요청</option>
-                                                <option value="invalid" label="invalid">수정필요</option>
-                                                <option value="wait" label="wait">진행대기</option>
-                                                <option value="ing_update" label="ing_update">진행(수정필요)</option>
-                                                <option value="ing_insp" label="ing_insp">진행(검수중)</option>
-                                                <option value="ing" label="ing">진행</option>
-                                                <option value="stop_creation_off" label="stop_creation_off">중단(소재OFF)</option>
-                                                <option value="stop_camp_off" label="stop_camp_off">중단(캠페인OFF)</option>
-                                                <option value="stop_camp_range" label="stop_camp_range">중단(캠페인기간)</option>
-                                                <option value="complete" label="complete">종료</option>
-                                                <option value="del_ready" label="del_ready">종료(삭제요청)</option>
-                                                <option value="del_complete" label="del_complete">종료(삭제완료)</option>
-                                            </select>
-                                            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 200px">
-                                                <span class="selection">
-                                                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-statusList-container">
-                                                        <span class="select2-selection__rendered" id="select2-statusList-container" title="전체">전체</span>
-                                                        <!-- <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span> -->
-                                                         <span class="select2-selection__arrow" role="presentation"><img src="/static/css/images/icon_chevron-down-solid-full.svg" role="presentation"></span>
-                                                    </span>
-                                                </span>
-                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                            </span>
-                                        </div>
+                                    <div class="box-right">
+                                        <button type="submit" class="btn btn-tertiary-mint btn-icon">
+                                            <i class="icon icon-filter"></i>
+                                            조회
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+
+                        <!-- 헤더) 다운로드 버튼 영역 -->
                         <div class="box-header">
                             <div class="box-option">
-                                <button id="syncCreation" type="button" class="btn btn-primary-outline">소재상태 새로고침</button>
-                                <button type="button" class="btn btn btn-secondary-outline btn-ico">
-                                    <!-- <i class="ico ico-download"></i> -->
-                                     <img class="" src="/static/css/images/icon_magnifying-glass-solid-full.svg">
+                                <button type="button" class="btn btn btn-secondary-outline btn-icon">
+                                    <i class="icon icon-download"></i>
                                     다운로드
                                 </button>
                             </div>
                         </div>
+
+                        <!-- 바디) 목록 영역 -->
                         <div class="box-body">
-                            <div class="ag-theme-alpine" style="display: flex; flex-direction: column; height: 100%">
-                                <div class="ag-grid">
-                                    <div class="ag-grid-inner">
-                                        <div style="height: 100%; --ag-line-height: 48px">
-                                            <!-- AG Grid -->
-                                            <div class="ag-root-wrapper ag-ltr ag-keyboard-focus ag-layout-auto-height" style="height: 548px">
-                                                <div class="ag-column-drop-wrapper" role="presentation">
-                                                    <div class="ag-unselectable ag-column-drop ag-column-drop-horizontal ag-focus-managed ag-column-drop-empty ag-hidden" aria-role="presentation">
-                                                        <div aria-hidden="true" class="ag-column-drop-title-bar ag-column-drop-horizontal-title-bar"><span class="ag-icon ag-icon-group ag-column-drop-icon ag-column-drop-horizontal-icon" unselectable="on" role="presentation"></span></div>
-                                                        <div class="ag-column-drop-list ag-column-drop-horizontal-list" role="listbox" aria-label="Row Groups"><span class="ag-column-drop-empty-message ag-column-drop-horizontal-empty-message">Drag here to set row groups</span></div>
-                                                    </div>
-                                                    <div class="ag-unselectable ag-column-drop ag-column-drop-horizontal ag-focus-managed ag-column-drop-empty ag-hidden" aria-role="presentation">
-                                                        <div aria-hidden="true" class="ag-column-drop-title-bar ag-column-drop-horizontal-title-bar"><span class="ag-icon ag-icon-pivot ag-column-drop-icon ag-column-drop-horizontal-icon" unselectable="on" role="presentation"></span></div>
-                                                        <div class="ag-column-drop-list ag-column-drop-horizontal-list" role="listbox" aria-label="Column Labels"><span class="ag-column-drop-empty-message ag-column-drop-horizontal-empty-message">Drag here to set column labels</span></div>
-                                                    </div>
-                                                </div>
-                                                <div class="ag-root-wrapper-body ag-focus-managed ag-layout-auto-height" style="height: 548px">
-                                                    <div class="ag-tab-guard ag-tab-guard-top" role="presentation" tabindex="0"></div>
-                                                    <!-- AG Grid Body -->
-                                                    <div class="ag-root ag-unselectable ag-layout-auto-height" role="grid" aria-colcount="23" aria-rowcount="1">
-                                                        <div class="ag-header ag-pivot-off" role="presentation" style="height: 69px; min-height: 69px">
-                                                            <div class="ag-pinned-left-header ag-hidden" role="presentation" style="width: 0px; min-width: 0px; max-width: 0px">
-                                                                <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 0px"></div>
-                                                            </div>
-                                                            <div class="ag-header-viewport" role="presentation">
-                                                                <div class="ag-header-container" role="rowgroup" style="width: 3450px; transform: translateX(0px)">
-                                                                    <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 3450px">
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="3"
-                                                                            style="left: 200px; width: 400px"
-                                                                            col-id="ag-Grid-AutoColumn"
-                                                                            aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-10-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">명칭</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
+                            <div class="list-grid">
+                                <div class="list-grid-inner">
+                                    <div style="height: 100%; --list-line-height: 48px;">
+                                        <!-- AG Grid -->
+                                         <div class="list-root-wrapper list-ltr list-keyboard-focus list-layout-auto-height">
+                                            <div class="list-root-wrapper-body list-focus-managed list-layout-auto-height">
+                                                <!-- AG Body -->
+                                                 <div class="list-root list-unselectable list-layout-auto-height">
+                                                    <!-- 행 제목 영역 -->
+                                                    <div class="list-header list-pivot-off" style="height: 26px; min-height: 26px;">
+                                                        <div class="list-header-viewport ">
+                                                            <div class="list-header-container" style="width: 1559px; transform: translateX(0px);">
+                                                                <div class="list-header-row list-header-row-column" style="height: 25px; top: 0px; width: 1559px;">
+                                                                    
+                                                                     <!-- #행 제목 구분 1 -->
+                                                                     <div class="list-header-cell list-header-cell-sortable list-focus-managed" style="left: 0px; width: 312px;">
+                                                                        <div class="list-header-cell-resize"></div>
+                                                                        <div class="list-cell-label-container list-header-cell-sorted-none">
+                                                                            <div class="list-header-cell-label">
+                                                                                <span class="list-header-cell-text">충전일자</span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="ag-header-cell ag-center-aligned-header ag-focus-managed" role="columnheader" tabindex="-1" aria-colindex="1" style="left: 0px; width: 100px" col-id="mng" aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-11-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text"></span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
+                                                                     </div>
+
+                                                                      <!-- #행 제목 구분 2 -->
+                                                                     <div class="list-header-cell list-header-cell-sortable list-center-aligned-header list-focus-managed" style="left: 312px; width: 312px;">
+                                                                        <div class="list-header-cell-resize"></div>
+                                                                        <div class="list-cell-label-container list-header-cell-sorted-none">
+                                                                            <div class="list-header-cell-label">
+                                                                                <span class="list-header-cell-text">고객명</span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="ag-header-cell ag-center-aligned-header ag-focus-managed" role="columnheader" tabindex="-1" aria-colindex="2" style="left: 100px; width: 100px" col-id="useYn" aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-12-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">ON/OFF</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
+                                                                     </div>
+
+                                                                     <!-- #행 제목 구분 3 -->
+                                                                      <div class="list-header-cell list-header-cell-sortable list-center-aligned-header list-focus-managed" style="left: 624px; width: 312px;">
+                                                                        <div class="list-header-cell-resize"></div>
+                                                                        <div class="list-cell-label-container list-header-cell-sorted-none">
+                                                                            <div class="list-header-cell-label">
+                                                                                <span class="list-header-cell-text">충전기 정보</span>
                                                                             </div>
                                                                         </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="4"
-                                                                            style="left: 600px; width: 100px"
-                                                                            col-id="projectId"
-                                                                            aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-13-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">프로젝트ID</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
+                                                                      </div>
+
+                                                                      <!-- #행 제목 구분 4 -->
+                                                                       <div class="list-header-cell list-header-cell-sortable list-center-aligned-header list-focus-managed" style="left: 936px; width: 312px;">
+                                                                        <div class="list-header-cell-resize"></div>
+                                                                        <div class="list-cell-label-container list-header-cell-sorted-none">
+                                                                            <div class="list-header-cell-label">
+                                                                                <span class="list-header-cell-text">충전량(kWh)</span>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="ag-header-cell ag-center-aligned-header ag-focus-managed" role="columnheader" tabindex="-1" aria-colindex="5" style="left: 700px; width: 150px" col-id="id" aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-14-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-header-cell-label">
-                                                                                <div class="customHeaderLabel ag-header-cell-text">
-                                                                                    비즈센터 캠페인/
-                                                                                    <br />
-                                                                                    소재ID
-                                                                                </div>
+                                                                     </div>
+
+                                                                     <!-- #행 제목 구분 5 -->
+                                                                     <div class="list-header-cell list-header-cell-sortable list-center-aligned-header list-focus-managed" style="left: 1248px; width: 311px;">
+                                                                        <div class="list-header-cell-resize"></div>
+                                                                        <div class="list-cell-label-container list-header-cell-sorted-none">
+                                                                            <div class="list-header-cell-label">
+                                                                                <span class="list-header-cell-text">결제금액</span>
                                                                             </div>
                                                                         </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="7"
-                                                                            style="left: 850px; width: 200px"
-                                                                            col-id="campPerd"
-                                                                            aria-description="Press CTRL ENTER to open column menu.">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-15-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">캠페인 기간</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="8"
-                                                                            col-id="campViewStatusDesc"
-                                                                            aria-description="Press CTRL ENTER to open column menu."
-                                                                            style="left: 1050px; width: 150px">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-51-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">상태</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="9"
-                                                                            col-id="mediaDiv4Des"
-                                                                            aria-description="Press CTRL ENTER to open column menu."
-                                                                            style="left: 1200px; width: 200px">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-52-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">노출 매체</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="10"
-                                                                            col-id="campBudgetTotal1"
-                                                                            aria-description="Press CTRL ENTER to open column menu."
-                                                                            style="left: 1400px; width: 150px">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-53-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text">캠페인 예산</span>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="11"
-                                                                            col-id="cost"
-                                                                            aria-description="Press CTRL ENTER to open column menu."
-                                                                            style="left: 1550px; width: 150px">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-54-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text" role="columnheader">소진 금액</span>
-                                                                                    <a class="ico-tooltip tooltip-f" id="useSum" title=""></a>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ag-header-cell ag-center-aligned-header ag-focus-managed"
-                                                                            role="columnheader"
-                                                                            tabindex="-1"
-                                                                            aria-colindex="12"
-                                                                            col-id="impCnt"
-                                                                            aria-description="Press CTRL ENTER to open column menu."
-                                                                            style="left: 1700px; width: 125px">
-                                                                            <div class="ag-header-cell-resize" role="presentation"></div>
-                                                                            <div role="presentation" class="ag-labeled ag-label-align-right ag-checkbox ag-input-field ag-header-select-all ag-hidden">
-                                                                                <div ref="eLabel" class="ag-input-field-label ag-label ag-hidden ag-checkbox-label" role="presentation"></div>
-                                                                                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper ag-checkbox-input-wrapper" role="presentation">
-                                                                                    <input ref="eInput" class="ag-input-field-input ag-checkbox-input" type="checkbox" id="ag-55-input" tabindex="-1" />
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="ag-cell-label-container" role="presentation">
-                                                                                <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"><span class="ag-icon ag-icon-menu" unselectable="on" role="presentation"></span></span>
-                                                                                <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                                                                    <span ref="eText" class="ag-header-cell-text" role="columnheader">노출</span>
-                                                                                    <a class="ico-tooltip tooltip-f" id="impCnt" title=""></a>
-                                                                                    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden"><span class="ag-icon ag-icon-filter" unselectable="on" role="presentation"></span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="ag-pinned-right-header ag-hidden" role="presentation" style="width: 0px; min-width: 0px; max-width: 0px">
-                                                                <div class="ag-header-row ag-header-row-column" role="row" aria-rowindex="1" style="height: 68px; top: 0px; width: 0px"></div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- AG Pinned Top -->
-                                                        <div class="ag-floating-top ag-selectable" role="presentation" style="height: 0px; min-height: 0px; display: none; overflow-y: hidden">
-                                                            <!-- AG Row Container topLeft -->
-                                                            <div class="ag-pinned-left-floating-top ag-hidden" role="presentation"></div>
-                                                            <!-- AG Row Container topCenter -->
-                                                            <div class="ag-floating-top-viewport" role="presentation"><div class="ag-floating-top-container" role="presentation" style="width: 3450px; transform: translateX(0px)"></div></div>
-                                                            <!-- AG Row Container topRight -->
-                                                            <div class="ag-pinned-right-floating-top ag-hidden" role="presentation"></div>
-                                                            <!-- AG Row Container topFullWidth -->
-                                                            <div class="ag-floating-top-full-width-container" role="presentation"></div>
-                                                        </div>
-                                                        <!-- AG Middle -->
-                                                        <div class="ag-body-viewport ag-row-no-animation ag-layout-auto-height ag-selectable" role="presentation">
-                                                            <!-- AG Row Container left -->
-                                                            <div class="ag-pinned-left-cols-container ag-hidden" role="presentation" style="height: 1px"></div>
-                                                            <!-- AG Row Container center -->
-                                                            <div class="ag-center-cols-clipper" role="presentation" style="height: 1px">
-                                                                <div class="ag-center-cols-viewport" role="presentation" style="height: calc(100% + 15px)"><div class="ag-center-cols-container" role="presentation" style="height: 1px; width: 3450px"></div></div>
-                                                            </div>
-                                                            <!-- AG Row Container right -->
-                                                            <div class="ag-pinned-right-cols-container ag-hidden" role="presentation" style="height: 1px"></div>
-                                                            <!-- AG Row Container fullWidth -->
-                                                            <div class="ag-full-width-container" role="presentation" style="height: 1px"></div>
-                                                        </div>
-                                                        <!-- AG Pinned Bottom -->
-                                                        <div class="ag-floating-bottom ag-selectable" role="presentation" style="height: 0px; min-height: 0px; display: none; overflow-y: hidden">
-                                                            <!-- AG Row Container bottomLeft -->
-                                                            <div class="ag-pinned-left-floating-bottom ag-hidden" role="presentation"></div>
-                                                            <!-- AG Row Container bottomCenter -->
-                                                            <div class="ag-floating-bottom-viewport" role="presentation"><div class="ag-floating-bottom-container" role="presentation" style="width: 3450px; transform: translateX(0px)"></div></div>
-                                                            <!-- AG Row Container bottomRight -->
-                                                            <div class="ag-pinned-right-floating-bottom ag-hidden" role="presentation"></div>
-                                                            <!-- AG Row Container bottomFullWidth -->
-                                                            <div class="ag-floating-bottom-full-width-container" role="presentation"></div>
-                                                        </div>
-                                                        <!-- AG Fake Horizontal Scroll -->
-                                                        <div class="ag-body-horizontal-scroll" aria-hidden="true" style="height: 15px; max-height: 15px; min-height: 15px">
-                                                            <div class="ag-horizontal-left-spacer ag-scroller-corner" ref="eLeftSpacer" style="width: 0px; max-width: 0px; min-width: 0px"></div>
-                                                            <div class="ag-body-horizontal-scroll-viewport" ref="eViewport" style="height: 15px; max-height: 15px; min-height: 15px">
-                                                                <div class="ag-body-horizontal-scroll-container" ref="eContainer" style="height: 15px; max-height: 15px; min-height: 15px; width: 3450px"></div>
-                                                            </div>
-                                                            <div class="ag-horizontal-right-spacer ag-scroller-corner" ref="eRightSpacer" style="width: 0px; max-width: 0px; min-width: 0px"></div>
-                                                        </div>
-                                                        <!-- AG Overlay Wrapper -->
-                                                        <div class="ag-overlay" aria-hidden="true">
-                                                            <div class="ag-overlay-panel">
-                                                                <div class="ag-overlay-wrapper ag-layout-auto-height ag-overlay-no-rows-wrapper" ref="eOverlayWrapper" style="height: 548px">
-                                                                    <div class="ag-react-container">
-                                                                        <div class="comp-no-data">
-                                                                            <div class="box-group">
-                                                                                <i class="ico ico-no-data"></i>
-                                                                                <p class="fz-18 fc-2">데이터가 존재하지 않습니다.</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="ag-side-bar ag-unselectable ag-hidden ag-focus-managed">
-                                                        <!--AG-SIDE-BAR-BUTTONS-->
-                                                        <div class="ag-side-buttons" role="tablist" ref="sideBarButtons"></div>
-                                                    </div>
-                                                    <div class="ag-tab-guard ag-tab-guard-bottom" role="presentation" tabindex="0"></div>
-                                                </div>
-                                                <div class="ag-status-bar ag-hidden">
-                                                    <div ref="eStatusBarLeft" class="ag-status-bar-left" role="status"></div>
-                                                    <div ref="eStatusBarCenter" class="ag-status-bar-center" role="status"></div>
-                                                    <div ref="eStatusBarRight" class="ag-status-bar-right" role="status"></div>
-                                                </div>
-                                                <div class="ag-paging-panel ag-unselectable ag-hidden" id="ag-8">
-                                                    <span class="ag-paging-row-summary-panel" role="status">
-                                                        <span id="ag-8-first-row" ref="lbFirstRowOnPage" class="ag-paging-row-summary-panel-number"></span>
-                                                        <span id="ag-8-to">to</span>
-                                                        <span id="ag-8-last-row" ref="lbLastRowOnPage" class="ag-paging-row-summary-panel-number"></span>
-                                                        <span id="ag-8-of">of</span>
-                                                        <span id="ag-8-row-count" ref="lbRecordCount" class="ag-paging-row-summary-panel-number"></span>
-                                                    </span>
-                                                    <span class="ag-paging-page-summary-panel" role="presentation">
-                                                        <div ref="btFirst" class="ag-paging-button" role="button" aria-label="First Page"><span class="ag-icon ag-icon-first" unselectable="on" role="presentation"></span></div>
-                                                        <div ref="btPrevious" class="ag-paging-button" role="button" aria-label="Previous Page"><span class="ag-icon ag-icon-previous" unselectable="on" role="presentation"></span></div>
-                                                        <span class="ag-paging-description" role="status">
-                                                            <span id="ag-8-start-page">Page</span>
-                                                            <span id="ag-8-start-page-number" ref="lbCurrent" class="ag-paging-number"></span>
-                                                            <span id="ag-8-of-page">of</span>
-                                                            <span id="ag-8-of-page-number" ref="lbTotal" class="ag-paging-number"></span>
-                                                        </span>
-                                                        <div ref="btNext" class="ag-paging-button" role="button" aria-label="Next Page"><span class="ag-icon ag-icon-next" unselectable="on" role="presentation"></span></div>
-                                                        <div ref="btLast" class="ag-paging-button" role="button" aria-label="Last Page"><span class="ag-icon ag-icon-last" unselectable="on" role="presentation"></span></div>
-                                                    </span>
-                                                </div>
-                                                <div class="ag-watermark ag-hidden">
-                                                    <div ref="eLicenseTextRef" class="ag-watermark-text"></div>
-                                                </div>
+
+                                                    <!-- AG Middle -->
+                                                    <!-- 행 내용 영역 -->
+                                                     <div class="list-body-viewport list-row-no-animation list-layout-auto-height">
+                                                        <!-- AG Row Container center -->
+                                                         <div class="list-center-cols-clipper" style="height: 384px;">
+                                                            <div class="list-center-cols-viewport" style="height: 100%;">
+                                                                <div class="list-center-cols-container" style="height: 384px; width: 1559px;">
+
+                                                                    <!-- 행 1 -->
+                                                                     <div class="list-row-no-focus list-row list-row-level-0 list-row-position-absolute list-row-even list-row-first" style="transform: translateY(0px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                     </div>
+
+                                                                    <!-- 행 2 -->
+                                                                     <div class="list-row-no-focus list-row list-row-level-0 list-row-position-absolute list-row-odd" style="transform: translateY(48px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                         <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div>
+                                                                      </div>
+
+                                                                    <!-- 행 3 -->
+                                                                     <div class="list-row list-row-level-0 list-row-position-absolute list-row-even list-row-no-focus" style="transform: translateY(96px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                      </div>
+
+                                                                    <!-- 행 4 -->
+                                                                     <div class="list-row-no-focus list-row list-row-level-0 list-row-position-absolute list-row-odd" style="transform: translateY(144px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div>
+                                                                     </div>
+
+                                                                    <!-- 행 5 -->
+                                                                     <div class="list-row-no-focus list-row list-row-level-0 list-row-position-absolute list-row-even" style="transform: translateY(192px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                      </div>
+
+                                                                    <!-- 행 6 -->
+                                                                     <div class="list-row list-row-level-0 list-row-position-absolute list-row-odd list-row-focus" style="transform: translateY(240px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-focus list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                     </div>
+
+                                                                    <!-- 행 7 -->
+                                                                     <div class="list-row-no-focus list-row list-row-level-0 list-row-position-absolute list-row-even"style="transform: translateY(288px); height: 48px;" >
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                     </div>
+
+                                                                    <!-- 행 8 -->
+                                                                     <div class="list-row list-row-level-0 list-row-position-absolute list-row-odd list-row-last list-row-no-focus" style="transform: translateY(336px); height: 48px;">
+                                                                        <!-- 날짜 -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-center-aligned-cell list-cell-value" style="left: 0px; width: 312px;">2026-01-19</div>
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 312px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 624px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 936px; width: 312px;">-</div> 
+                                                                        <!-- # -->
+                                                                        <div class="list-cell list-cell-not-inline-editing list-cell-normal-height list-right-aligned-cell list-cell-value" style="left: 1248px; width: 311px;">-</div> 
+                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
                                             </div>
-                                        </div>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 페이지 사이즈, 페이지 이동 -->
                         <div class="box-footer">
+                            <!-- 건 수 -->
                             <div class="box-left">
-                                <div class="pagenation">
-                                    <span class="list-total">
-                                        총
-                                        <em class="fw-medium">0</em>
-                                        건
-                                    </span>
-                                </div>
+                               <div class="pagenation">
+                                <span class="list-total">
+                                    총
+                                    <em class="fw-medium">8</em>
+                                    건
+                                </span>
+                               </div> 
                             </div>
+                            <!-- 페이지 사이즈 옵션 -->
                             <div class="box-right">
-                                <div class="pagenation disabled">
-                                    <select class="select2-single small select2-hidden-accessible" disabled="" tabindex="-1" aria-hidden="true">
-                                        <option value="10">10 Row</option>
-                                        <option value="20">20 Row</option>
-                                        <option value="30">30 Row</option>
-                                        <option value="40">40 Row</option>
-                                        <option value="50">50 Row</option>
+                                <div class="pagenation">
+                                    <select class="select2-single small select2-hidden-accessible">
+                                        <option value="10">
+                                            10
+                                            Row
+                                        </option>
+                                        <option value="20">
+                                            20
+                                            Row
+                                        </option>
+                                        <option value="30">
+                                            30
+                                            Row
+                                        </option>
+                                        <option value="40">
+                                            40
+                                            Row
+                                        </option>
+                                        <option value="50">
+                                            50
+                                            Row
+                                        </option>
                                     </select>
-                                    <span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" style="width: 120px">
+                                    <!-- 페이지 사이즈 목록 -->
+                                    <span class="select2 select2-container select2-container--default select2-container--below select2-container--focus" style="width: 120px;">
                                         <span class="selection">
-                                            <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-f7t2-container">
-                                                <span class="select2-selection__rendered" id="select2-f7t2-container" title="10 Row">10 Row</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
+                                            <span class="select2-selection select2-selection--single">
+                                                <span class="select2-selection__rendered" id="select2-xdt6-container" title="10 Row">10 Row</span>
+                                                <span class="select2-selection__arrow">
+                                                    <b></b>
+                                                </span>
                                             </span>
                                         </span>
-                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                        <!-- 드롭다운 옵션 영역 -->
+                                        <span class="dropdown-wrapper"></span>
                                     </span>
+
+                                    <!-- 페이지 이동 -->
                                     <div class="page-nav">
-                                        <button class="btn-nav first" disabled=""><i class="ico"></i></button>
-                                        <button class="btn-nav prev" disabled=""><i class="ico"></i></button>
-                                        <a href="#!" class="page-num selected" data-value="1">1</a>
-                                        <button class="btn-nav next" disabled=""><i class="ico"></i></button>
-                                        <button class="btn-nav last" disabled=""><i class="ico"></i></button>
+                                        <!-- 처음으로 -->
+                                        <button class="btn-nav first">
+                                            <i class="icon"></i>
+                                        </button>
+                                        <!-- 이전으로 -->
+                                        <button class="btn-nav prev">
+                                            <i class="icon"></i>
+                                        </button>
+                                        <!-- 페이지 번호 -->
+                                        <a href="#" class="page-num selected" data-value="1">1</a>
+                                        <!-- 다음으로 -->
+                                        <button class="btn-nav next">
+                                            <i class="icon"></i>
+                                        </button>
+                                        <!-- 끝으로 -->
+                                        <button class="btn-nav last">
+                                            <i class="icon"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <form>
-                            <div id="fbDialog" class="dialog" style="display: none">
-                                <div class="dialog-body">
-                                    <div class="wrap-section no-border">
-                                        <div class="box-body">
-                                            <div class="wrap-preview">
-                                                <div class="box-body">
-                                                    <div class="box-group flex-container">
-                                                        <div class="box-left"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Facebook-01.png" alt="img1" /></div>
-                                                        <div class="box-right"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Facebook-02.png" alt="img2" /></div>
-                                                    </div>
-                                                    <div class="box-group">
-                                                        <div class="box-left"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Ico-logo-wadiz-48x48.png" class="logo" alt="img3" /></div>
-                                                        <div class="box-right">
-                                                            <p class="fz-14 fc-1 fw-medium lh15">와디즈</p>
-                                                            <p class="fz-12 fc-3 lh15">광고</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="box-group"></div>
-                                                    <div class="box-group"><div class="comp-thumb"></div></div>
-                                                    <div class="box-group">
-                                                        <div class="box-row"><span class="fz-12 fc-3 lh15">wadiz.kr</span></div>
-                                                        <div class="box-row flex-container">
-                                                            <div class="box-left"><p id="fbAdTitle01" class="fz-14 fc-1 fw-medium lh15"></p></div>
-                                                            <div class="box-right"><button id="fbClickBtn" type="button" class="btn btn-secondary-outline xsmall w-auto"></button></div>
-                                                        </div>
-                                                        <div class="box-row"><p id="fbAdTitle02" class="fz-12 fc-4 lh15"></p></div>
-                                                    </div>
-                                                </div>
-                                                <div class="box-footer">
-                                                    <div class="box-group"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Facebook-03.png" alt="img5" /></div>
-                                                    <div class="box-group"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Facebook-04.png" alt="img6" /></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dialog-footer"><button id="fbClose" type="button" class="btn btn-secondary-outline large">닫기</button></div>
-                            </div>
-                        </form>
-                        <form>
-                            <div id="itgDialog" class="dialog" style="display: none">
-                                <div class="dialog-body">
-                                    <div class="wrap-section no-border">
-                                        <div class="box-body">
-                                            <div class="wrap-preview">
-                                                <div class="box-body">
-                                                    <div class="box-group flex-container">
-                                                        <div class="box-left"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Insta-01.png" alt="img1" /></div>
-                                                        <div class="box-right"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Insta-02.png" alt="img2" /></div>
-                                                    </div>
-                                                    <div class="box-group">
-                                                        <div class="box-left"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Ico-logo-wadiz-48x48.png" class="logo" alt="img3" /></div>
-                                                        <div class="box-right">
-                                                            <p class="fz-14 fc-1 fw-medium lh15">와디즈</p>
-                                                            <p class="fz-12 fc-3 lh15">광고</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="box-group"><div class="comp-thumb"></div></div>
-                                                    <div class="box-group">
-                                                        <div class="box-row flex-container">
-                                                            <div class="box-left"><span id="itgClickBtn" class="fz-14 fc-1 fw-medium lh15"></span></div>
-                                                            <div class="box-right"><i class="ico ico-arrow"></i></div>
-                                                        </div>
-                                                        <div class="box-row border-top"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Insta-03.png" class="logo" alt="img5" /></div>
-                                                    </div>
-                                                    <div class="box-group"></div>
-                                                </div>
-                                                <div class="box-footer"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Insta-04.png" class="logo" alt="img6" /></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dialog-footer"><button id="itgClose" type="button" class="btn btn-secondary-outline large">닫기</button></div>
-                            </div>
-                        </form>
-                        <form>
-                            <div id="gdnDialog" class="dialog" style="display: none">
-                                <div class="dialog-body">
-                                    <div class="wrap-section no-border">
-                                        <div class="box-body">
-                                            <div class="wrap-preview">
-                                                <div class="box-body">
-                                                    <div class="box-group"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Img-Google-01.png" alt="img1" /></div>
-                                                    <div class="box-group">
-                                                        <div class="box-left"><img src="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/preview/Ico-logo-wadiz-60x17.png" alt="img2" /></div>
-                                                    </div>
-                                                    <div class="box-group"><p id="gdnAdTitle01" class="fz-14 fc-1 fw-medium lh15"></p></div>
-                                                    <div class="box-group"><p id="gdnAdTitle02" class="fz-14 fc-1 fw-medium lh15"></p></div>
-                                                    <div class="box-group"><div class="comp-thumb"></div></div>
-                                                    <div class="box-group"></div>
-                                                    <div class="box-group flex-container">
-                                                        <div class="box-left"><span class="fz-12 fc-1">와디즈</span></div>
-                                                        <div class="box-right"><button type="button" id="gdnClickBtn" class="btn btn-secondary-outline xsmall w-auto"></button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dialog-footer"><button id="gdnClose" type="button" class="btn btn-secondary-outline large">닫기</button></div>
-                            </div>
-                        </form>
                     </section>
                 </div>
-            </div>
-            <div class="content-footer">
-                <footer class="Footer-module__container__npT3S">
-                    <address class="Footer-module__address__xdP3d">
-                        <p>와디즈㈜</p>
-                        <p>대표이사 : 신혜성</p>
-                        <p>사업자등록번호 : 258-87-01370</p>
-                        <p>주소 : 경기 성남시 분당구 판교로 242 PDC A동 402호</p>
-                        <p>이메일 상담: info@wadiz.kr</p>
-                        <p>유선 상담: 1661-9056</p>
-                        <p class="Footer-module__copyright__Za3qS">© wadiz Co., Ltd.</p>
-                    </address>
-                    <nav class="Footer-module__terms__nKTop">
-                        <ul>
-                            <li class="Footer-module__term__1y-1U"><a href="https://business.wadiz.kr/terms/ad_service" target="_blank" rel="noreferrer">광고 서비스 이용약관</a></li>
-                            <li class="Footer-module__term__1y-1U"><a href="https://www.wadiz.kr/web/wterms/privacy" target="_blank" rel="noreferrer">개인정보 처리방침</a></li>
-                        </ul>
-                    </nav>
-                </footer>
             </div>
         </div>
     </body>

@@ -19,18 +19,42 @@
     width: 100%;
     padding-block: 8px;
 }
+
 .NavigationTab-icon{
     display: flex;
     align-items: center;
 }
+.NavigationTab-icon img{
+    /* width: 22px; */
+    height: 22px;
+}
+.NavigationTab-icon svg{
+    display: block;
+    height: 24px;
+    width: 24px;
+    fill: #6a737c;
+}
+.NavigationTab-icon svg g{
+    fill: #6a737c;
+}
+
+.NavigationTab-container.active .NavigationTab-icon svg g{
+    fill: #222;
+}
+
+.NavigationTab-icon > i{
+    margin-top: 5px;
+    color: #6a737c;
+}
+.NavigationTab-container.active .NavigationTab-icon > i{
+    color: #222;
+}
 .NavigationTab-name{
+    text-align: center;
     font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: #868e96;
-}
-.NotificationBadge{
-
 }
 .NotificationBadge{
     position: absolute;
@@ -47,7 +71,7 @@
     border-radius: 100%;
 }
 .NotificationBadge.type-new{
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background-clip: padding-box;
@@ -56,13 +80,19 @@
     box-sizing: border-box;
     flex-shrink: 0;
 }
+.NotificationBadge.type-new{
+    display: none;
+}
+.NotificationBadge.type-new.active {
+    display: inline-flex;
+}
 .NavigationTab-name{
     font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: #868e96;
 }
-.NavigationTab-name.active{
+.NavigationTab-container.active .NavigationTab-name{
     font-weight: 700;
     color: #212529;
 }

@@ -1,0 +1,17 @@
+/* 헤더 */
+#AppLayout_AppGNBbar{
+    position: fixed;
+}
+
+/* 사이드탭 */
+#AppNavbarLayout_Nav{
+    position: fixed;
+}
+
+/* 목록 */
+#compTransaction {
+    position: relative;
+    width: calc(100% - 240px);
+    left: 240px;
+    top: 72px;
+}

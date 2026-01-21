@@ -1,56 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>기업 메인 - 헤더</title>
-        <!-- favicon -->
+
         <link rel="shortcut icon" href="https://static.wadiz.kr/studio/funding/favicon.ico" />
-        <link rel="icon" href="favicon.ico" type="image/png" sizes="32x32" />
-        <link rel="icon" href="favicon.ico" type="image/png" sizes="16x16" />
-        <!-- 폰트 -->
-        <link rel="stylesheet" href="/static/css/common/font.css">
-        <!-- 공용 디자인 -->
-        <link rel="stylesheet" href="/static/css/common/reset.css">
-        <!-- 헤더 css -->
-        <link rel="stylesheet" href="/static/css/company-admin/company-header.css">
+        <link rel="stylesheet" href="/static/css/common/font.css" />
+        <link rel="stylesheet" href="/static/css/common/reset.css" />
+        <link rel="stylesheet" href="/static/css/components/headers/company-header.css" />
     </head>
     <body>
-        <div class="AppGNBbar_container__ZDMwZ" id="AppLayout_AppGNBbar">
-            <div class="AppGNBbar_flex__MDc1N">
-                <div class="StudioLogo_container__MDU0M">
-                    <button class="StudioLogo_logo__ZTQzY" type="button" aria-label="로고 버튼"><img src="https://static.wadiz.kr/studio/funding/assets/artwork-logo-wadiz-maker-studio-logotype-black-en-C8jfjtnq.svg" /></button>
-                    <div class="StudioLogo_type__Mzg0M">펀딩·프리오더</div>
+        <div id="admin-header" class="admin-header">
+            <div class="admin-header-group">
+                <div class="admin-header-brand">
+                    <!-- 로고 -->
+                    <button id="admin-header-logo-button" class="admin-header-logo-btn" type="button" aria-label="로고 버튼">
+                        <img src="/static/images/logo_ggshoop.png" />
+                    </button>
+
+                    <!-- 서비스 슬로건 -->
+                    <div class="admin-header-product-type">언제 어디서나 간편하게 ｜ 충전 파트너스 센터</div>
                 </div>
-                <div class="StudioStatus_stateBox__ZWM5Y">
-                    <span class="LabelBadge_container__N2ExY"><span class="LabelBadge_badge__MTg4Y LabelBadge_md__NTZjZ LabelBadge_gray__MWM4M LabelBadge_tint__YmFlM">작성 중</span></span>
+
+                <!-- 지점명 -->
+                <div class="admin-header-status">
+                    <span class="badge">
+                        <span class="badge-label badge-label-md badge-label-gray badge-label-tint">(지점명)#</span>
+                    </span>
                 </div>
             </div>
-            <div class="AppGNBbar_flex__MDc1N AppGNBbar_rightBox__NmIwO">
-                <div class="AnnouncementButton_container__ZDI2M" role="button">
-                    <img
-                        class="AnnouncementButton_icon__YmYzZ"
-                        src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'?%3e%3csvg%20width='24px'%20height='24px'%20viewBox='0%200%2024%2024'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ctitle%3eGroup%2020%3c/title%3e%3cdefs%3e%3cpolygon%20id='path-1'%20points='0%200%2020%200%2020%2017.9953708%200%2017.9953708'%3e%3c/polygon%3e%3c/defs%3e%3cg%20id='Page-1'%20stroke='none'%20stroke-width='1'%20fill='none'%20fill-rule='evenodd'%3e%3cg%20id='Group-20'%3e%3crect%20id='Rectangle'%20fill-opacity='0'%20fill='%23FFFFFF'%20x='0'%20y='0'%20width='24'%20height='24'%3e%3c/rect%3e%3cg%20id='Group'%3e%3crect%20id='Rectangle'%20fill='%23FFFFFF'%20opacity='0'%20x='0'%20y='0'%20width='24'%20height='24'%3e%3c/rect%3e%3cg%20id='Group-6'%20transform='translate(2.000000,%203.000000)'%3e%3cg%20id='Group-3'%3e%3cmask%20id='mask-2'%20fill='white'%3e%3cuse%20xlink:href='%23path-1'%3e%3c/use%3e%3c/mask%3e%3cg%20id='Clip-2'%3e%3c/g%3e%3cpath%20d='M1.26810993,13.3807221%20L7.86036937,13.3807221%20C9.56087376,13.3807221%2011.2379633,13.6592429%2012.8467595,14.2094435%20L18.7307193,16.219679%20L18.7307193,1.7756918%20L12.8467595,3.78690464%20C11.2369877,4.33612797%209.55989815,4.6146487%207.86036937,4.6146487%20L1.26810993,4.6146487%20L1.26810993,13.3807221%20Z%20M20,17.9953708%20L12.4369994,15.4114803%20C10.9608874,14.9072112%209.42038459,14.6521448%207.86036937,14.6521448%20L-0.000195123855,14.6521448%20L-0.000195123855,3.34420327%20L7.86036937,3.34420327%20C9.41940897,3.34420327%2010.9599118,3.08913692%2012.4369994,2.58389055%20L20,0%20L20,17.9953708%20Z'%20id='Fill-1'%20fill='%23495057'%20mask='url(%23mask-2)'%3e%3c/path%3e%3c/g%3e%3cpath%20d='M7.16709431,19%20C4.8226812,19%203.05388345,16.9995371%203.05388345,14.3472379%20C3.05388345,14.2143298%203.06168841,14.0892398%203.0714446,13.9709906%20L4.33584718,14.0667627%20C4.32901784,14.1537393%204.32218851,14.2485341%204.32218851,14.3472379%20C4.32218851,16.2753832%205.54561508,17.7285773%207.16709431,17.7285773%20C9.26662699,17.7285773%2010.0120001,15.9079313%2010.0120001,14.3472379%20L11.2803052,14.2856702%20L11.2803052,14.3472379%20C11.2803052,17.1304907%209.6266305,19%207.16709431,19'%20id='Fill-4'%20fill='%23495057'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e"
-                        aria-hidden="true" />
-                    <span class="DotBadge_badge__YjE5Z DotBadge_sm__ZTUxO AnnouncementButton_badge__ZjhhM"></span>
+
+            <!-- 알림 / 바로가기 / 계정 정보 보기 -->
+            <div class="admin-header-group admin-header-group-right">
+                <!-- 알림 버튼 -->
+                <div id="notification-button" class="notif-button" role="button">
+                    <!-- 알림 아이콘 -->
+                    <img class="notif-button-icon" src="/static/images/icon_notif.svg" aria-hidden="true" />
+                    <span class="dot-badge dot-badge-sm notif-button-badge"></span>
                 </div>
-                <div class="LanguageSelection_container__MzQwM">
-                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__ZTE2Z">
+
+                <!-- 충전소 확인 -->
+                <div id="charging-station-select" class="charging-station-select">
+                    <!-- 아이콘 -->
+                    <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="WithProps_icon__Yjg0M">
                         <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
                             d="M3.45191 18.9237C5.46866 21.4106 8.54871 23 12 23C17.9076 23 22.7274 18.3431 22.9888 12.5H23V11.5H22.9888C22.7274 5.65693 17.9076 1 12 1C6.09244 1 1.27256 5.65693 1.01116 11.5H1V12.5H1.01116C1.10387 14.5723 1.76998 16.4955 2.85466 18.1146C3.04158 18.3936 3.24092 18.6636 3.45191 18.9237ZM15.3647 19.2993C14.3529 21.1544 13.1194 22 12 22C10.8806 22 9.64712 21.1544 8.63525 19.2993C8.32641 18.7331 8.05127 18.093 7.81882 17.3921C9.10354 17.1406 10.5132 17 11.999 17C13.4856 17 14.8959 17.1408 16.1811 17.3924C15.9486 18.0932 15.6735 18.7332 15.3647 19.2993ZM16.4635 16.429C15.0835 16.1523 13.5768 16 11.999 16C10.422 16 8.91594 16.1521 7.53645 16.4286C7.23114 15.239 7.0426 13.912 7.0064 12.5H16.9936C16.9574 13.9121 16.7688 15.2392 16.4635 16.429ZM17.1615 17.6118C16.6326 19.2434 15.8801 20.6028 14.9814 21.548C16.8149 20.9761 18.4218 19.8906 19.6337 18.46C18.8998 18.1281 18.069 17.8413 17.1615 17.6118ZM20.255 17.6457C19.4209 17.2502 18.4732 16.914 17.439 16.6505C17.7627 15.3804 17.9578 13.9781 17.9939 12.5H21.9877C21.894 14.4038 21.2678 16.1676 20.255 17.6457ZM6.56089 16.65C6.2373 15.38 6.04215 13.978 6.00609 12.5H2.01228C2.10602 14.4035 2.732 16.1671 3.74453 17.645C4.57878 17.2496 5.52656 16.9134 6.56089 16.65ZM4.36579 18.4593C5.09976 18.1275 5.93069 17.8407 6.83831 17.6114C7.36723 19.2431 8.11981 20.6027 9.01858 21.548C7.18483 20.976 5.57776 19.8903 4.36579 18.4593ZM16.9936 11.5H7.0064C7.04259 10.0883 7.23108 8.76147 7.53631 7.57196C8.91592 7.84851 10.4221 8.00067 11.9994 8.00067C13.5771 8.00067 15.0837 7.84843 16.4636 7.57173C16.7689 8.7613 16.9574 10.0882 16.9936 11.5ZM8.63525 4.70068C8.32633 5.26705 8.05112 5.90739 7.81863 6.60847C9.10349 6.86 10.5133 7.00067 11.9994 7.00067C13.4859 7.00067 14.8961 6.85991 16.1813 6.60824C15.9488 5.90725 15.6736 5.26698 15.3647 4.70068C14.3529 2.8456 13.1194 2 12 2C10.8806 2 9.64712 2.8456 8.63525 4.70068ZM17.9939 11.5C17.9578 10.0221 17.7627 8.62015 17.4392 7.3502C18.4735 7.08673 19.4213 6.75047 20.2554 6.35492C21.268 7.83285 21.894 9.59644 21.9877 11.5H17.9939ZM17.1618 6.38889C18.0694 6.15941 18.9003 5.87253 19.6342 5.54063C18.4222 4.10967 16.8152 3.02398 14.9814 2.45199C15.8802 3.39735 16.6329 4.75701 17.1618 6.38889ZM4.36547 5.54104C5.09947 5.87291 5.93045 6.15975 6.83813 6.38918C7.36706 4.75717 8.11971 3.39741 9.01857 2.45199C7.18467 3.02403 5.57748 4.10988 4.36547 5.54104ZM6.56075 7.3505C5.52636 7.08708 4.57853 6.75087 3.74426 6.35537C2.73189 7.8332 2.10601 9.59663 2.01228 11.5H6.00609C6.04215 10.0223 6.23724 8.62037 6.56075 7.3505Z"
                             fill="#495057"></path>
                     </svg>
-                    <em>ko</em>
+                    <em>충전소 확인</em>
                 </div>
-                <div class="PreviewExitButtons_container__YTgxO">
-                    <button class="Button_button__MDE5Z Button_md__ZTFkY PreviewExitButtons_button__MTE0Z" type="button">
-                        <span><span>내 프로젝트 보기</span></span>
-                    </button>
-                    <button class="Button_button__MDE5Z Button_md__ZTFkY PreviewExitButtons_button__MTE0Z" type="button">
-                        <span><span>나가기</span></span>
-                    </button>
+
+                <div id="header-actions" class="header-actions">
+                    <!-- 내 정보 보기 -->
+                    <button id="view-project-button" class="btn btn-md header-actions-btn" type="button">내 정보 보기</button>
+                    <!-- 로그아웃 -->
+                    <button id="exit-button" class="btn btn-md header-actions-btn" type="button">로그아웃</button>
                 </div>
             </div>
         </div>

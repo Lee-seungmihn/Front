@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../../../static/css/common/font.css" />
+<link rel="stylesheet" href="../../../static/css/common/reset.css" />
+<link rel="stylesheet" href="../../../static/css/common/fontawesome.css" />
+<link rel="stylesheet" href="../../../static/css/common/common.css">
+<link rel="stylesheet" href="../../../static/css/components/navigations/navigation-m.css" />
+<title>Global navigation</title>
+</head>
+<body>
+<div id="app" class="main">
+    <!-- 예시 -->
+    <div style="height: 200vh">
+        <div style="height: 100vh; background: #fff">
+            <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+                <button class="button button-size button-mint button-confirm">
+                    <span>
+                        <span>비주얼 영역</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div style="height: 100vh; background: #aaa">
+            <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+                <button class="button button-size button-mint button-confirm">
+                    <span>
+                        <span>컨텐츠 영역</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <style>
+        .quickButton-container{
+            display: flex;
+            position: fixed;
+            right: 16px;
+            bottom: calc(20px + env(safe-area-inset-bottom));
+            flex-direction: column;
+            align-items: flex-end;
+            transform: translateY(-56px);
+            z-index: 16;
+            gap: 8px;
+        }
+        .quickButton-container .quickButton-V2G{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #212529;
+            width: 44px;
+            height: 44px;
+        }  
+        .quickButton-container .quickButton-V2G .zz1OpenButton_icon{
+            width: 24px;
+            height: 24px;
+            color: #fff;
+        }  
+        .quickButton-container .quickButton-V2G .zz1OpenButton_icon{
+            width: 24px;
+            height: 24px;
+            color: #fff;
+        }
+    </style>
+    <!-- //예시 -->
+    <aside id="Quick" class="quickButton-container">
+        <div id="QuickV2G" class="">
+            <button type="button" id="QuickV2G" class="quickButton-V2G">
+                <span class="zz1OpenButton_icon">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yMS42MzI4IDZIMTguMzY3M1YxOC4zNjczSDZWMjEuNjMyOEgxOC4zNjczVjM0SDIxLjYzMjhWMjEuNjMyOEgzNFYxOC4zNjczSDIxLjYzMjhWNloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=" />
+                </span>
+            </button>
+            <span class="NotificationBadge type-new">N</span>
+        </div>
+        <div style="display: none"></div>
+    </aside>
+</div>
+<script src="../../../static/js/navigations/navigation-m.js"></script>
+</body>
+</html>

@@ -429,7 +429,7 @@ button {
     right: 0;
 }
 
-.WithProps-module_icon__d564b {
+.withProps_icon {
     display: block;
     transform: scale(1);
     transition: transform .3s ease-out;
@@ -438,13 +438,35 @@ button {
     height: 1em;
 }
 
-.WithProps-module_icon__d564b>path {
+.withProps_icon>path {
     fill: currentColor;
 }
 
 @media screen and (min-width: 1096px) {
     .menuItem_container {
         cursor: pointer;
+    }
+}
+
+.ConfirmModal_overlay {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: transparent;
+    overflow: hidden;
+    animation: ConfirmModal-module_overlayInit__d02cc .25s;
+}
+
+@keyframes ConfirmModal-module_overlayInit__d02cc {
+    0% {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: #0003;
     }
 }
 
@@ -529,6 +551,27 @@ button {
     color: #adb5bd;
 }
 
+.ConfirmModal_confirmModal .ConfirmModal-module_footer__0f141 {
+    position: relative;
+    margin-top: 24px;
+}
+
+.ConfirmModal_confirmModal .ConfirmModal-module_footer__0f141 .ConfirmModal-module_buttonGroup__396f5 {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+
+
+.ConfirmModal_confirmModal .ConfirmModal-module_content__06674 .ConfirmModal-module_message__4479a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 0;
+    width: 100%;
+    resize: none;
+}
 
 .Divider_divider.Divider_horizontal.Divider_spacing {
     margin-block: 24px;
@@ -765,4 +808,306 @@ button {
 
 .fabcontainer_container {
     pointer-events: none;
+}
+
+.ConfirmModal-module_sizeSheet__a7c9e.ConfirmModal_contentAfterOpen,
+.ConfirmModal-module_sizeSheetMD__bbe5d.ConfirmModal_contentAfterOpen,
+.ConfirmModal_module_sizeFull.ConfirmModal_contentAfterOpen {
+    transform: translateY(0);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+}
+
+.ConfirmModal-module_sizeSheet__a7c9e,
+.ConfirmModal-module_sizeSheetMD__bbe5d,
+.ConfirmModal_module_sizeFull {
+    transform: translateY(55%);
+    transition: .15s ease-out 50ms;
+    transition-property: transform;
+}
+
+.ConfirmModal_module_sizeFull {
+    border-radius: 0;
+    padding-top: 24px;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+.ConfirmModal_confirmModala {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ConfirmModal_confirmModala .ConfirmModal_header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.ConfirmModal_confirmModala .ConfirmModal_closeIconRoot {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.Button_button.Button_text,
+.Button_button.Button-module_textLink__3d56d {
+    border: 0;
+    border-color: transparent;
+    padding: 0;
+    height: auto;
+}
+
+.Button_button.Button_md {
+    padding-inline: 16px;
+    height: 40px;
+    font-size: 14px;
+}
+
+.ConfirmModal_confirmModala .ConfirmModal_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.ConfirmModal_confirmModala .ConfirmModal_content {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
+.SettingsModal_layout {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.NicknameSetting_nickNameForm {
+    width: 100%;
+    max-width: 560px;
+}
+
+.NicknameSetting_nickNameForm .NicknameSetting_inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.TextField_textField {
+    display: block;
+    position: relative;
+}
+
+.NicknameSetting_nickNameForm .NicknameSetting_inputGroup .NicknameSetting_nicknameTextField label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.TextField_textField>label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 4px;
+}
+
+.TextField_textField .TextField_field.TextField_hasEndIcon {
+    padding-right: 0;
+}
+
+.TextField_textField .TextField_field.TextField_noEndText {
+    padding-right: 0;
+}
+
+.TextField_textField .TextField_field.TextFieldaTextField_noStartText {
+    padding-left: 0;
+}
+
+.TextField_textField .TextField_field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-inline: 16px;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+
+.TextField_textField.TextField_lg .TextField_hasEndIcon input {
+    padding-right: 44px;
+}
+
+.TextField_textField .TextField_field.TextField_noEndText input,
+.TextField_textField .TextField_field.TextField_noEndText textarea {
+    padding-right: 16px;
+}
+
+.TextField_textField .TextField_field.TextFieldaTextField_noStartText input,
+.TextField_textField .TextField_field.TextFieldaTextField_noStartText textarea {
+    padding-left: 16px;
+}
+
+.TextField_textField .TextField_field input,
+.TextField_textField .TextField_field textarea {
+    flex-grow: 1;
+    border: 0;
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.TextField_textField .TextField_field input {
+    padding: 0;
+}
+
+.Button_button.Button_block {
+    width: 100%;
+}
+
+.Input_input.Input_lg {
+    height: 48px;
+    min-height: 48px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+button:not(:disabled),
+input:not(:disabled) {
+    cursor: pointer;
+}
+
+.Input_input {
+    display: block;
+    transition-property: border-color, background-color, color;
+    transition-duration: .15s;
+    outline: none;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0 16px;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    color: #212529;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.TextField_textField .TextField_field.TextField_hasEndIcon>.TextField_endIcon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+.TextField_textField .TextField_field button.TextField-module_passwordIcon__92654,
+.TextField_textField .TextField_field button.TextField_clearIcon {
+    pointer-events: unset;
+}
+
+.TextField_textField.TextField_lg svg,
+.TextField_textField.TextField_lg .TextField_endIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.Button_button.Button_iconOnly.Button_lg {
+    width: 48px;
+    height: 48px;
+}
+
+.TextField_textField .TextField_field button {
+    border: 0;
+}
+
+.Button_button.Button_iconOnly {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.Button_button.Button_lg {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+button:not(:disabled),
+input:not(:disabled) {
+    cursor: pointer;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.Button_button span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.TextField_textField .TextField_field button path {
+    fill: #adb5bd;
+}
+
+.NicknameSetting_nickNameForm .NicknameSetting_nickNameRules {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+.Button_button.Button_contained.Button_mint {
+    border-color: #00c4c4;
+    background-color: #00c4c4;
+    color: #fff;
+}
+
+.Button_button:not(.Button-module_loading__b3841).Button_disabled,
+.Button_button:not(.Button-module_loading__b3841):disabled,
+.Button_button:not(.Button-module_loading__b3841)[disabled] {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.Button_button.Button_lg {
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+
+
+.ConfirmModal-module_sizeMobile__dbfcd, .ConfirmModal_sizeSm {
+    width: 400px;
 }
