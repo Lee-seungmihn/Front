@@ -31,7 +31,7 @@
 .NavigationTab-icon svg{
     display: block;
     height: 24px;
-    width: 24px;
+    width: 38px;
     fill: #6a737c;
 }
 .NavigationTab-icon svg g{
@@ -42,8 +42,9 @@
     fill: #222;
 }
 
-.NavigationTab-icon > i{
-    margin-top: 5px;
+.NavigationTab-icon i{
+    font-size: 1.5rem;
+    margin-top: 0px;
     color: #6a737c;
 }
 .NavigationTab-container.active .NavigationTab-icon > i{
@@ -51,10 +52,20 @@
 }
 .NavigationTab-name{
     text-align: center;
-    font-size: 10px;
+    font-size: .8rem;
     font-weight: 400;
     line-height: 1.5;
     color: #868e96;
+}
+.NavigationTab-name{
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #868e96;
+}
+.NavigationTab-container.active .NavigationTab-name{
+    font-weight: 700;
+    color: #212529;
 }
 .NotificationBadge{
     position: absolute;
@@ -86,13 +97,57 @@
 .NotificationBadge.type-new.active {
     display: inline-flex;
 }
-.NavigationTab-name{
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #868e96;
+
+
+
+
+/* 퀵메뉴 */
+.quickButton-container {
+    display: flex;
+    position: fixed;
+    right: 16px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translateY(-56px);
+    z-index: 16;
+    gap: 8px;
 }
-.NavigationTab-container.active .NavigationTab-name{
-    font-weight: 700;
-    color: #212529;
+/* .quickButton-container button{
+    margin-bottom: 10px;
+}
+.quickButton-container button:last-child{
+    margin-bottom: 0px;
+} */
+/* .quickButton-container .quickButton-pageTop:hover{
+    
+} */
+.quickButton-container .quickButton-pageTop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 44px;
+    height: 44px;
+}
+.quickButton-container .quickButton-V2G {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #212529;
+    width: 44px;
+    height: 44px;
+}
+.quickButton-container .quickButton-V2G .zz1OpenButton_icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+.quickButton-container .quickButton-V2G .zz1OpenButton_icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
 }
