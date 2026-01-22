@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <div id="GGSH-toast-container-component">
+    <div class="ToastContainer_container">
+        <div class="Toast_container">
+            <div class="Toast_content">닉네임을 변경했어요.</div>
+        </div>
+    </div>
+</div>
     <div id="root">
         <header class="header_container">
             <div class="header_content">
@@ -62,7 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="menuItem_container menuItem_container_modals">
+                            <div class="menuItem_container">
                                 <dl class="menuItem_left">
                                     <dt class="menuItem_title">닉네임</dt>
                                     <dd class="menuItem_description"></dd>
@@ -219,8 +226,8 @@
     </div>
     <div class="ReactModalPortal">
         <div class="ConfirmModal_overlay waffle__modal__overlay " style="background-color: rgba(0, 0, 0, 0.2);">
-            <div class="ConfirmModal_confirmModal ConfirmModal_module_sizeFull ConfirmModal_contentAfterOpen"
-                tabindex="-1" role="dialog" aria-modal="true">
+            <div class="ConfirmModal_confirmModal ConfirmModal_sizeFull ConfirmModal_contentAfterOpen" tabindex="-1"
+                role="dialog" aria-modal="true">
                 <div class="ConfirmModal_header" style="padding-left: 16px; padding-right: 16px;">
                     <div class="ConfirmModal_closeIconRoot">
                         <button aria-label="모달 닫기" class="Button_button Button_text Button_md button_close"
@@ -270,54 +277,234 @@
                                 (최대 20자까지. 한글, 영문, 숫자만 가능)
                             </p>
                             <button
-                                class="Button_button Button_mint Button_contained Button_lg Button_block Button_disabled"
+                                class="Button_button Button_mint Button_contained Button_lg Button_block Button_disabled button_close ButtonNickName"
                                 disabled="" type="submit"><span><span>완료</span></span>
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <!-- <div class="ConfirmModal-module_confirmModal__ee845 ConfirmModal-module_sizeFull__d9367 ConfirmModal-module_contentAfterOpen__4c7f6"
+            <div class="ConfirmModal_confirmModal ConfirmPasswordModal-module ConfirmModal_sizeFull ConfirmModal_contentAfterOpen"
                 tabindex="-1" role="dialog" aria-modal="true">
-                <div class="ConfirmModal-module_header__cb0db" style="padding-left: 16px; padding-right: 16px;">
-                    <div class="ConfirmModal-module_closeIconRoot__0d8f3"><button aria-label="모달 닫기"
-                            class="Button-module_button__d78c2 Button-module_text__47ff4 Button-module_md__92ce9"
-                            type="button"><span><span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" class="WithProps-module_icon__d564b"
-                                        style="height: 24px; width: 24px;">
+                <div class="ConfirmModal_header ConfirmModal-module_emptyTitle"
+                    style="padding-left: 16px; padding-right: 16px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md button_close" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="withProps_icon" style="height: 24px; width: 24px;">
                                         <path
                                             d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z"
                                             fill="#495057"></path>
                                     </svg></span></span></button></div>
-                    <div class="ConfirmModal-module_title__fb8b1">이메일 수정</div>
                 </div>
-                <div class="ConfirmModal-module_content__06674 undefined"
-                    style="padding-left: 16px; padding-right: 16px;">
-                    <div class="SettingsModal-module_layout__3d26d">
-                        <div class="EmailSetting-module_changeEmail__1f7e0">
-                            <form class="EmailSetting-module_emailForm__1c446">
-                                <div class="EmailSetting-module_emailGroup__a22c2">
-                                    <div class="EmailSetting-module_emailInputWrapper__814a1">
+                <div class="ConfirmModal_content" style="padding-left: 16px; padding-right: 16px;">
+                    <div class="ConfirmPassword-module_passwordTitle">
+                        <div class="MarkdownToHtml-module_container">
+                            <p>개인정보 확인/변경을 위해<br>사용 중인 비밀번호를 확인해 주세요</p>
+                        </div>
+                    </div>
+                    <div class="ConfirmPassword_layer">
+                        <div class="ConfirmPassword_confirmPassword">
+                            <form class="ConfirmPassword_confirmPasswordForm" data-gtm-form-interact-id="19">
+                                <div class="ConfirmPassword-module_content">
+                                    <div
+                                        class="TextField_textField TextField_lg undefined ConfirmPassword_passwordInput">
+                                        <label for="password"><span>비밀번호</span></label>
                                         <div
-                                            class="TextField-module_textField__404b4 TextField-module_lg__11d56 EmailSetting-module_emailTextField__6e3cc">
+                                            class="TextField_field TextFieldaTextField_noStartText TextField_noEndTex TextField_hasEndIcon">
+                                            <input name="password" placeholder="비밀번호를 입력해 주세요." id="password"
+                                                type="password" class="Input_input Input_lg" aria-invalid="false"
+                                                data-gtm-form-interact-field-id="20"><button aria-label="비밀번호 보기"
+                                                class="Button_button Button_text Button_lg Button_iconOnly iconButton TextField_endIcon TextField_passwordIcon"
+                                                type="button"><span><span><svg viewBox="0 0 24 24"
+                                                            xmlns="http://www.w3.org/2000/svg" class="WithProps_icon">
+                                                            <path
+                                                                d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                                fill="#495057"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                                                fill="#495057"></path>
+                                                        </svg></span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="Button_button Button_mint Button_contained buttonEmail_okay Button_block"
+                                    type="button"><span><span>확인</span></span>
+                                </button>
+                                <div class="ConfirmPassword_textWrapperMobile"><a
+                                        class="Button_button Button_gray Button_textLink Button_sm"
+                                        href="https://account.wadiz.kr/find-password?isForOnlyFindPassword=true"><span><span>비밀번호
+                                                찾기
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ConfirmModal_confirmModal ConfirmModal_sizeFull  ConfirmModalFullOkay ConfirmModal_contentAfterOpen ConfirmModal_contentAfterOpen"
+                tabindex="-1" role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header" style="padding-left: 16px; padding-right: 16px;">
+                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
+                            class="Button_button Button_text Button_md button_close" type="button"><span><span><svg
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        class="WithProps_icon" style="height: 24px; width: 24px;">
+                                        <path
+                                            d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z"
+                                            fill="#495057"></path>
+                                    </svg></span></span></button></div>
+                    <div class="ConfirmModal_title">이메일 수정</div>
+                </div>
+                <div class="ConfirmModal_content undefined" style="padding-left: 16px; padding-right: 16px;">
+                    <div class="SettingsModal_layout">
+                        <div class="EmailSetting_changeEmail">
+                            <form class="EmailSetting_emailForm">
+                                <div class="EmailSetting_emailGroup">
+                                    <div class="EmailSetting_emailInputWrapper">
+                                        <div class="TextField_textField TextField_lg EmailSetting_emailTextField">
                                             <label for="email"><span>이메일</span></label>
                                             <div
-                                                class="TextField-module_field__4d1fc TextField-module_disabled__003a5 TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7">
+                                                class="TextField_field TextField_disabled TextField_noStartText TextField_noEndText">
                                                 <input inputmode="email" placeholder="이메일을 입력해 주세요." name="email"
-                                                    id="email" type="text"
-                                                    class="Input-module_input__210a1 Input-module_lg__592e9"
+                                                    id="email" type="text" class="Input_input Input_lg"
                                                     aria-invalid="false" disabled="">
                                             </div>
                                         </div><button
-                                            class="Button-module_button__d78c2 Button-module_mint__1c1d6 Button-module_contained__ecf2a Button-module_lg__53dd9 EmailSetting-module_button__ccaa3"
-                                            type="submit"><span><span>수정</span></span></button>
+                                            class="Button_button Button_mint asdfwafwsfaa Button_contained Button_lg EmailSetting_button"
+                                            type="button"><span><span>수정</span></span></button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            <div id="modal">
+                <div class="Modal_overlay">
+                    <div id="FormModal" class="FormModal-container">
+                        <div class="FormModal-header">
+                            <div class="FormModal-button">
+                                <button class="button button-close">
+                                    <span>
+                                        <span>
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                class="WithProps-icon" style="height: 24px; width: 24px;">
+                                                <path
+                                                    d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z"
+                                                    fill="#495057"></path>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="FormModal-title">비밀번호 변경</div>
+                        </div>
+                        <div class="FormModal-content">
+                            <div class="FormModal-wrap">
+                                <form action="" class="passwordForm">
+                                    <div class="currentPassword-container">
+                                        <div class="currentPassword-wrap">
+                                            <label for="currentPassword">
+                                                <span>기존 비밀번호</span>
+                                            </label>
+                                            <div class="inputField">
+                                                <input type="password" id="currentPassword"
+                                                    class="input input-lg input-hasIcon input-hasIcon input-ph-sm"
+                                                    placeholder="비밀번호 입력">
+                                                <button class="button button-icon button-inInput button-lg icon-pass"
+                                                    aria-details="button-pass-fade" type="button">
+                                                    <span>
+                                                        <span>
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                class="WithProps-icon pass-icon">
+                                                                <path
+                                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                                    fill="#495057"></path>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                                                    fill="#495057"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="newPassword-container">
+                                        <div class="newPassword-wrap">
+                                            <label for="newPassword">
+                                                <span>새로운 비밀번호</span>
+                                            </label>
+                                            <div class="inputField">
+                                                <input type="password" id="newPassword"
+                                                    class="input input-lg input-hasIcon input-hasIcon input-ph-sm"
+                                                    placeholder="비밀번호 입력">
+                                                <button class="button button-icon button-inInput button-lg icon-pass"
+                                                    aria-details="button-pass-fade" type="button">
+                                                    <span>
+                                                        <span>
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                class="WithProps-icon pass-icon">
+                                                                <path
+                                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                                    fill="#495057"></path>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                                                    fill="#495057"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <p class="input-message nomal">영문, 숫자, 특수문자 !@#$%^&amp;*+=-를 조합한 8자 이상으로 입력해
+                                                주세요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="newPasswordConfirm-container">
+                                        <div class="newPasswordConfirm-wrap">
+                                            <label for="newPasswordConfirm">
+                                                <span>새로운 비밀번호 확인</span>
+                                            </label>
+                                            <div class="inputField">
+                                                <input type="password" id="newPasswordConfirm"
+                                                    class="input input-lg input-hasIcon input-hasIcon input-ph-sm"
+                                                    placeholder="비밀번호 입력">
+                                                <button class="button button-icon button-inInput button-lg icon-pass"
+                                                    aria-details="button-pass-fade" type="button">
+                                                    <span>
+                                                        <span>
+                                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                class="WithProps-icon pass-icon">
+                                                                <path
+                                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                                    fill="#495057"></path>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M21.9999 12C20.5443 7.33923 16.6167 4 12 4C7.38322 4 3.45561 7.33923 2 12C3.45561 16.6608 7.38322 20 12 20C16.6167 20 20.5443 16.6608 21.9999 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                                                    fill="#495057"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <p class="input-message error none">새 비밀번호가 일치하지 않아요.</p>
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        class="button button-contain button-mint button-lg button-submit button-disabled"
+                                        disabled><!-- class="button-disabled" disabled -->
+                                        <span><span>변경 완료</span></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 <SCript src="/static/js/MypageSettings/MypageSettings.js"></SCript>
 
