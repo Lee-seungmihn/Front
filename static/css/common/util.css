@@ -43,6 +43,10 @@
     min-width: 100px !important;
 }
 
+.fw-medium {
+    font-weight: 500;
+}
+
 /* lsm - util */
 .mt0{margin-top: 0px !important;}
 .mt1{margin-top: 1px !important;}
