@@ -1,7 +1,9 @@
 *,:after,:before {
     box-sizing: border-box
 }
-
+html {
+    scroll-behavior: smooth;
+}
 a,address,article,aside,audio,b,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,label,legend,li,mark,menu,nav,object,ol,p,pre,section,select,small,span,strike,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,u,ul,var,video {
     margin: 0;
     border: 0;

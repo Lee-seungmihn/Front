@@ -24,6 +24,12 @@
     justify-content: flex-end;
     width: 100%;
 }
+/* 로고 부분 */
+/* .logo-container{} */
+.logo-container img{
+    width: 6em;
+}
+/* 서치 부분 */
 .search-container{
     flex-grow: 1;
     
@@ -110,6 +116,7 @@
 .input-control .button_container svg{
     display: block;
 }
+/* 나라 부분 */
 .country-container{
     display: flex;
     align-items: center;
@@ -129,11 +136,30 @@
     background-color: #f2f4f6;
     transition: background-color .2s;
 }
+.country-container .button_container:hover{
+    background-color: #f2f4f6;
+}
 .country-container .button_container .CountryChangeButton_flag{
     width: 24px;
     height: 16px;
 }
-
+/* 맵핀 부분 */
+.addessPin-container{
+    display: flex;
+    min-width: 50px;
+    padding: 8px;
+}
+.addessPin-container i{
+    font-size: 22px;
+    color: #666;
+}
+.addessPin-container p{
+    font-size: 10px;
+    color: #666;
+    line-height: 1.1;
+    margin-left: 2px;
+}
+/* 알림 부분 */
 .notice-container{
     position: relative;
     display: flex;

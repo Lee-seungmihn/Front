@@ -1,7 +1,10 @@
 /* common */
-#modal{visibility: hidden; opacity: 0; transition: opacity 0.5s;}
+#modal{position: relative; z-index: 1001; visibility: hidden; opacity: 0; transition: opacity 0.5s;}
 #modal.active{visibility: visible; opacity: 1; transition: .5s;}
-
+#modal-form{position: relative; z-index: 1001; visibility: hidden; opacity: 0; transition: opacity 0.5s;}
+#modal-form.active{visibility: visible; opacity: 1; transition: .5s;}
+#modal-alarm{position: relative; z-index: 1001; visibility: hidden; opacity: 0; transition: opacity 0.5s;}
+#modal-alarm.active{visibility: visible; opacity: 1; transition: .5s;}
 /* button Gruop */
 .buttonGroup{
     display: inline-flex;
@@ -170,7 +173,7 @@
     inset: 0;
     align-items: center;
     justify-content: center;
-    z-index: 32;
+    /* z-index: 32; */
     background-color: rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: .3s;
@@ -301,6 +304,73 @@
     justify-content: center;
     margin-top: 28px;
 }
+ /* ZZ1 modal */
+.ZZ1Modal-container{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 95%;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    padding-top: 0;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    padding-block: 24px;
+    outline: none;
+    overflow: visible;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    transform: translateY(0);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+    transition: .15s ease-out 50ms;
+    transition-property: transform;
+}
+/* 임시 UI 맞춤 */
+.ZZ1Modal-container .button-close {
+    margin-top: 1px;
+}
+.ZZ1Modal-container > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.ZZ1Modal-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-bottom: 10px;
+}
+.ZZ1Modal-button{
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.ZZ1Modal-title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.ZZ1Modal-content{
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+    padding-top: 20px;
+}
+
+.ZZ1Modal-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
 
 .passwordForm{
     display: flex;

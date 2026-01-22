@@ -1,6 +1,9 @@
-// 
+// layout
 const body = document.querySelector("body");
 const modal = document.getElementById("modal");
+
+// buttons
+const zz1Btn = document.getElementById("QuickV2G");
 const confirms = document.querySelectorAll(".button-confirm");
 const closes = document.querySelectorAll(".button-close");
 
@@ -30,6 +33,15 @@ inputFields.forEach(inputField => {
 })
 
 // 확인
+// const modalOpen = () => {
+//     body.classList.add("hidden");
+//     modal.classList.add('active');
+// }
+// const modalClose = () => {
+//     body.classList.remove("hidden");
+//     modal.classList.remove('active');
+// }
+
 confirms.forEach(confirm => {
     confirm.addEventListener("click", () =>{
         body.classList.toggle("hidden")
