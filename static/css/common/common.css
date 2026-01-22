@@ -58,3 +58,155 @@
     align-items: center;
     background: #ddd;
 }
+
+/* button Gruop */
+.buttonGroup{
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 8px;
+}
+.buttonGroup .button{
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+.buttonGroup .button-icon.button-inInput{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+.buttonGroup .button-confirm{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+
+.button-submit{
+    margin-top: 16px;
+}
+.buttonGroup .button-size{
+    padding-inline: 24px;
+    height: 48px;
+    font-size: 16px;
+}
+/* button */
+.button{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+.button-close{
+    position: relative;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: .15s;
+    border: 1px solid #cdd3d8;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-inline: 24px;
+    height: 48px;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #495057;
+    font-size: 16px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+.button{
+    border: 0;
+    border-color: transparent;
+    padding: 0;
+    height: auto;
+}
+.button-inInput{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+.button-inInput svg{
+    width: 20px;
+    height: 20px;
+}
+.button.button-inInput path {
+    fill: #adb5bd;
+}
+.button-icon{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+.button-bg-white{
+    background: #fff;
+}
+.button.button-mint{
+    border: 1px solid #00c4c4;
+    background-color: #00c4c4;
+    color: #fff;
+}
+.button.button-bg-white{
+    background: white;
+}
+.button.button-mint.button-bg-white{
+    color: #00c4c4;
+}
+.button.button-contain{
+    width: 100%;
+}
+.button-disabled.button-mint,
+button[disabled].button-mint {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+.button .WithProps-icon{
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+.button svg{
+    display: inline-block;
+}
+.button span{
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
