@@ -84,7 +84,7 @@ setInterval(() => {
 //     buttonBookMark.classList.toggle("on");
 // });
 
-
+//          토스트창
 const wishButtons = document.querySelectorAll(".WishIconButton_container");
 const toastAdd = document.querySelector(".Toast_container.toast-add");
 const toastRemove = document.querySelector(".Toast_container.toast-remove");
@@ -106,7 +106,7 @@ wishButtons.forEach(button => {
     });
 });
 
-
+            // 모달
 const closes = document.querySelectorAll(".button_close");
 const modal = document.querySelector(".ReactModalPortal");
 const wishOpens = document.querySelectorAll(".wish_modalOpen");
@@ -134,6 +134,8 @@ notificationBadges.forEach(notificationBadge => {
     });
 });
 
+
+// 찜목록 색빼기
 const wishButtonremoves = document.querySelectorAll(".WishButton_button");
 const svgAdd = document.querySelector(".Toast_container.toast-add");
 const svgRemove = document.querySelector(".Toast_container.toast-remove");
@@ -142,14 +144,11 @@ const svgRemove = document.querySelector(".Toast_container.toast-remove");
 wishButtonremoves.forEach(button => {
     button.addEventListener("click", () => {
         const path = button.querySelector("svg path");
-        if (!path) return;
 
-        const currentFill = path.style.getPropertyValue("fill");
-
-        if (currentFill === "rgb(33, 37, 41, 0.4)" || currentFill === "#21252966") {
-            path.style.setProperty("fill", "#f66", "important"); 
+        if (path === "#f66") {
+            path.style.setProperty("fill", "#f2125296666", "important"); 
         } else {
-            path.style.setProperty("fill", "#21252966", "important"); 
+              path.style.setProperty("fill","transparent");
         }
     });
 });

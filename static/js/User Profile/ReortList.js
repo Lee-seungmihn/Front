@@ -1,25 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.Tab-module_tab');
-    const actionButtons = document.querySelectorAll('.Button-module_button__d78c2 span span');
+document.querySelector('.Tabs-module_tabs').addEventListener('click', (e) => {
+    const tab = e.target.closest('.Tab-module_tab');
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            tabs.forEach(t => t.classList.remove('Tab-module_active'));
-            
-            this.classList.add('Tab-module_active');
+    document.querySelectorAll('.Tab-module_tab').forEach(tab => tab.classList.remove('Tab-module_active'));
 
-            const tabText = this.querySelector('p').childNodes[0].textContent.trim();
-            
-            actionButtons.forEach(btnSpan => {
-                if (tabText === '차단 목록') {
-                    btnSpan.textContent = '차단 해제';
-                } else if (tabText === '신고 목록') {
-                    btnSpan.textContent = '신고 취소';
-                }
-            });
-            
-        });
+    tab.classList.add('Tab-module_active');
+
+    const value = tab.dataset.value;
+    const panels = document.querySelectorAll('.TabPanels-module_tabPanels > ul'); 
+    panels.forEach((panel, index) => {
+        if ((value === '1' && index === 0) || (value === '3' && index === 1)) {
+            panel.style.display = 'block';
+        } else {
+            panel.style.display = 'none';
+        }
     });
 });
 
 
+
+
+
+const toast = document.querySelector(".Toast-module_container");
+const buttons = document.querySelectorAll(".close_button");
+
+buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        toast.querySelector(".Toast-module_content");
+
+        toast.classList.add("Toast-module_show");
+
+        setTimeout(() => {
+            toast.classList.remove("Toast-module_show");
+        }, 1000);
+    });
+});

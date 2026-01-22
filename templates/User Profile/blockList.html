@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차단/신고 목록</title>
-    <link rel="stylesheet" href="/static/css/User Profile/blockList.css">
+    <link rel="stylesheet" href="/static/css/User Profile/Report List.css">
 </head>
 
 <body>
@@ -60,10 +60,10 @@
                                             </span></button></li>
                                     <li data-index="2"></li>
                                     <li data-index="3"><button type="button"
-                                            class="Tab-module_tab Tab-module_active undefined Tab-module_md"
-                                            role="tab" data-value="3"><span>
+                                            class="Tab-module_tab Tab-module_active undefined Tab-module_md" role="tab"
+                                            data-value="3"><span>
                                                 <p>신고 목록 <sup
-                                                        class="MyFriends-module_sup MyFriends-module_supSelected__08c06">2</sup>
+                                                        class="MyFriends-module_sup MyFriends-module_supSelected">2</sup>
                                                 </p>
                                             </span></button></li>
                                 </ul>
@@ -80,8 +80,7 @@
                                                             src="https://cdn.wadiz.kr/wwwwadiz/green001/2024/0620/20240620095342091_3967511.jpg/wadiz/format/jpg/quality/80/optimize"></span></span><strong
                                                     class="BlockedSupporterCard-module_nickname">손창희</strong>
                                             </a>
-                                            <button
-                                                class="Button-module_button__d78c2 Button-module_gray__cb6b2 Button-module_sm__b6dba"
+                                            <button class="Button-module_button Button-module_gray Button-module_sm close_button"
                                                 type="button"><span>
                                                     <span>차단 해제</span>
                                                 </span></button>
@@ -94,7 +93,7 @@
                                                         class="Avatar-module_inner Avatar-module_noBorder"><img
                                                             src="https://static.wadiz.kr/assets/icon/profile-icon-3.png"></span></span><strong
                                                     class="BlockedSupporterCard-module_nickname">Alex</strong></a><button
-                                                class="Button-module_button__d78c2 Button-module_gray__cb6b2 Button-module_sm__b6dba"
+                                                class="Button-module_button Button-module_gray Button-module_sm close_button"
                                                 type="button"><span><span>차단 해제</span></span></button></div>
                                     </li>
                                 </ul>
@@ -105,8 +104,15 @@
                 </div>
             </div>
         </main>
-
+    </div>
+    <div id="Toast-container">
+        <div class="ToastContainer-module_container">
+            <div class="Toast-module_container Toast-module_showMobile">
+                <div class="Toast-module_content">차단 해제했어요.</div>
+            </div>
+        </div>
     </div>
 </body>
+<script src="/static/js/User Profile/ReortList.js"></script>
 
 </html>

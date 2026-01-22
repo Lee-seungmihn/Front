@@ -13,7 +13,7 @@
         <header class="header_container">
             <div class="header_content">
                 <div class="header_left">
-                    <button class="button_containar" aria-label="뒤로가기" type="button">
+                    <button class="StyledComponent-module_container" aria-label="뒤로가기" type="button">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="withProps_icon"
                             style="height: 24px; width: 24px;">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -219,18 +219,24 @@
     </div>
     <div class="ReactModalPortal">
         <div class="ConfirmModal_overlay waffle__modal__overlay " style="background-color: rgba(0, 0, 0, 0.2);">
-            <div class="ConfirmModal_confirmModala ConfirmModal_module_sizeFull ConfirmModal_contentAfterOpen"
+            <div class="ConfirmModal_confirmModal ConfirmModal_module_sizeFull ConfirmModal_contentAfterOpen"
                 tabindex="-1" role="dialog" aria-modal="true">
                 <div class="ConfirmModal_header" style="padding-left: 16px; padding-right: 16px;">
                     <div class="ConfirmModal_closeIconRoot">
-                        <button aria-label="모달 닫기" class="Button_button Button_text Button_md button_close" type="button">
+                        <button aria-label="모달 닫기" class="Button_button Button_text Button_md button_close"
+                            type="button">
                             <span>
-                                <span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
+                                <span>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
                                         class="WithProps_icon" style="height: 24px; width: 24px;">
                                         <path
                                             d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z"
-                                            fill="#495057"></path>
-                                    </svg></span></span></button>
+                                            fill="#495057">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
                     </div>
                     <div class="ConfirmModal_title">닉네임 수정</div>
                 </div>
@@ -245,50 +251,73 @@
                                         class="TextField_field TextFieldaTextField_noStartText TextField_noEndText TextField_hasEndIcon">
                                         <input name="nickname" placeholder="닉네임을 입력해주세요" id="nickname" type="text"
                                             class="Input_input Input_lg NicknameSetting_nicknameInput"
-                                            aria-invalid="false"><button aria-label="지우기"
+                                            aria-invalid="false">
+                                        <button aria-label="지우기"
                                             class="Button_buttona Button_lg Button_iconOnly iconButton TextField_endIcon TextField_clearIcon"
-                                            type="button"><span><span><svg viewBox="0 0 24 24"
-                                                        xmlns="http://www.w3.org/2000/svg" class="WithProps_icon">
+                                            type="button"><span><span>
+                                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                        class="WithProps_icon">
                                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                                             d="M1.40002 12C1.40002 6.14581 6.14581 1.40002 12 1.40002C17.8542 1.40002 22.6 6.14581 22.6 12C22.6 17.8542 17.8542 22.6 12 22.6C6.14581 22.6 1.40002 17.8542 1.40002 12ZM7.3331 15.8184L11.1515 12.0001L7.3331 8.18167L8.18162 7.33315L12 11.1515L15.8184 7.33315L16.6669 8.18167L12.8485 12.0001L16.6669 15.8184L15.8184 16.667L12 12.8486L8.18162 16.667L7.3331 15.8184Z"
                                                             fill="#495057"></path>
-                                                    </svg></span></span></button>
+                                                    </svg>
+                                                </span></span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <p class="NicknameSetting_nickNameRules">서비스 이용 시 다른 사람에게 공개되는 이름이에요.
-                                (최대 20자까지. 한글, 영문, 숫자만 가능)</p><button
+                                (최대 20자까지. 한글, 영문, 숫자만 가능)
+                            </p>
+                            <button
                                 class="Button_button Button_mint Button_contained Button_lg Button_block Button_disabled"
-                                disabled="" type="submit"><span><span>완료</span></span></button>
+                                disabled="" type="submit"><span><span>완료</span></span>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="ConfirmModal_confirmModal ConfirmModal_sizeSm ConfirmModal_contentAfterOpen" tabindex="-1"
-                role="dialog" aria-modal="true">
-                <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
-                    <div class="ConfirmModal_closeIconRoot"><button aria-label="모달 닫기"
-                            class="Button_button Button-module_text__47ff4 Button-module_md__92ce9"
+            <!-- <div class="ConfirmModal-module_confirmModal__ee845 ConfirmModal-module_sizeFull__d9367 ConfirmModal-module_contentAfterOpen__4c7f6"
+                tabindex="-1" role="dialog" aria-modal="true">
+                <div class="ConfirmModal-module_header__cb0db" style="padding-left: 16px; padding-right: 16px;">
+                    <div class="ConfirmModal-module_closeIconRoot__0d8f3"><button aria-label="모달 닫기"
+                            class="Button-module_button__d78c2 Button-module_text__47ff4 Button-module_md__92ce9"
                             type="button"><span><span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" class="WithProps-module_icon" style="height: 24px; width: 24px;">
+                                        width="24" class="WithProps-module_icon__d564b"
+                                        style="height: 24px; width: 24px;">
                                         <path
                                             d="M11.9998 11.1515L4.424 3.57565L3.57547 4.42418L11.1513 12L3.57549 19.5759L4.42401 20.4244L11.9998 12.8486L19.5757 20.4244L20.4242 19.5759L12.8484 12L20.4242 4.4242L19.5757 3.57567L11.9998 11.1515Z"
                                             fill="#495057"></path>
                                     </svg></span></span></button></div>
-                    <div class="ConfirmModal-module_title__fb8b1">비밀번호 등록</div>
+                    <div class="ConfirmModal-module_title__fb8b1">이메일 수정</div>
                 </div>
                 <div class="ConfirmModal-module_content__06674 undefined"
-                    style="padding-left: 24px; padding-right: 24px;">
-                    <div class="ConfirmModal-module_message__4479a">서포터님의 소중한 정보 보호를 위해, 비밀번호 입력 후부터 정보 수정이 가능해요.</div>
+                    style="padding-left: 16px; padding-right: 16px;">
+                    <div class="SettingsModal-module_layout__3d26d">
+                        <div class="EmailSetting-module_changeEmail__1f7e0">
+                            <form class="EmailSetting-module_emailForm__1c446">
+                                <div class="EmailSetting-module_emailGroup__a22c2">
+                                    <div class="EmailSetting-module_emailInputWrapper__814a1">
+                                        <div
+                                            class="TextField-module_textField__404b4 TextField-module_lg__11d56 EmailSetting-module_emailTextField__6e3cc">
+                                            <label for="email"><span>이메일</span></label>
+                                            <div
+                                                class="TextField-module_field__4d1fc TextField-module_disabled__003a5 TextField-module_noStartText__b3da2 TextField-module_noEndText__0e7c7">
+                                                <input inputmode="email" placeholder="이메일을 입력해 주세요." name="email"
+                                                    id="email" type="text"
+                                                    class="Input-module_input__210a1 Input-module_lg__592e9"
+                                                    aria-invalid="false" disabled="">
+                                            </div>
+                                        </div><button
+                                            class="Button-module_button__d78c2 Button-module_mint__1c1d6 Button-module_contained__ecf2a Button-module_lg__53dd9 EmailSetting-module_button__ccaa3"
+                                            type="submit"><span><span>수정</span></span></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="ConfirmModal-module_footer__0f141" style="padding-left: 24px; padding-right: 24px;">
-                    <div class="ConfirmModal-module_buttonGroup__396f5"><button
-                            class="Button_button Button-module_mint__1c1d6 Button-module_contained__ecf2a Button-module_lg__53dd9"
-                            type="button"><span><span>확인</span></span></button></div>
-                </div>
-            </div>
-        </div>
-    </div>
+            </div> -->
 </body>
 <SCript src="/static/js/MypageSettings/MypageSettings.js"></SCript>
 
