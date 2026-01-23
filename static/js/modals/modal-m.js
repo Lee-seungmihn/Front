@@ -58,18 +58,25 @@ const onlyClose = (onlyOne) => {
     body.classList.remove("hidden");
     modal.classList.remove('active');
 }
-
 // 쇼 이벤트
 const showToast = (showId) => {
+    let timeSet = null;
     const showContainer = document.getElementById(showId);
+
+    if (timeSet) clearTimeout(timeSet);
+    document.querySelectorAll('.toast_show').forEach((el) => {
+        el.classList.remove('toast_show');
+        el.classList.add('none');
+    });
 
     showContainer.classList.remove('none', 'toast_hide');
     showContainer.classList.add('toast_show');
 
-    setTimeout(() => {
+    timeSet = setTimeout(() => {
         hideToast(showContainer);
     }, 2000);
 };
+
 // 하이드 이벤트
 const hideToast = (targetEl) => {
     targetEl.classList.remove('toast_show');
