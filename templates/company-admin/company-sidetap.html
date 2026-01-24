@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="/static/css/common/util.css" />
 
         <!-- 개인 css -->
-        <link rel="stylesheet" href="/static/css/company-admin/company-sidetap-all-arrows-sibling.css" />
+        <link rel="stylesheet" href="/static/css/company-admin/company-sidetap.css" />
     </head>
     <body>
         <nav id="app-navbar-layout-nav" class="app-navbar-layout-container app-navbar-layout-expand app-navbar-layout-scroll">
@@ -40,9 +40,35 @@
 
                     <button type="button" id="project-info-box" class="project-info-info-button" aria-controls="project-info-box" aria-expanded="false">
                         <span class="project-info-text">더보기</span>
-                        <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon" style="height: 16px; width: 16px"><path d="M19.1211 7.39999H4.87889L12 18.0817L19.1211 7.39999Z" fill="#495057"></path></svg>
+                        <svg width="16" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon project-info-arrow" style="height: 16px; width: 16px"><path d="M19.1211 7.39999H4.87889L12 18.0817L19.1211 7.39999Z" fill="#495057"></path></svg>
                     </button>
                 </div>
+
+                <!-- 더보기 클릭시 표시될 드롭다운 박스 -->
+                <div class="project-info-infobox" hidden>
+                    <dl>
+                        <dt class="blind-text-text-blind"></dt>
+                        <dd class="project-info-content">
+                            <span class="avatar-avatar avatar-lg project-info-profile-image">
+                                <span class="avatar-inner">
+                                    <img src="/static/images/icon_basic_profile.svg">
+                                </span>
+                            </span>
+                            <span class="project-info-name">ㅇㅇㅇ</span>
+                        </dd>
+                        <dd class="project-info-content project-info-statebox">
+                            <span class="project-info-state">작성 중</span>
+                        </dd>
+                    </dl>
+
+                    <button type="button" class="button-button button-mint button-sm button-block">
+                        <span>
+                            <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon button-icon"><path d="M20.2024 10.3029L18.0811 12.4243L17.2326 11.5757L19.3539 9.45442C20.6817 8.12664 20.6817 5.97388 19.3539 4.64609C18.0261 3.31831 15.8734 3.31831 14.5456 4.64609L11.01 8.18163C9.68226 9.50941 9.68226 11.6622 11.01 12.99C11.5386 13.5186 12.198 13.8367 12.884 13.9444L11.8984 14.93C11.264 14.7092 10.6684 14.3453 10.1615 13.8385C8.36511 12.0421 8.36511 9.12951 10.1615 7.3331L13.6971 3.79756C15.4935 2.00115 18.406 2.00115 20.2024 3.79756C21.9988 5.59398 21.9988 8.50654 20.2024 10.3029Z" fill="#495057"></path><path d="M3.79763 13.6971L5.91895 11.5757L6.76748 12.4243L4.64615 14.5456C3.31837 15.8734 3.31837 18.0261 4.64615 19.3539C5.97394 20.6817 8.1267 20.6817 9.45448 19.3539L13.6971 15.1113C15.0249 13.7835 15.0249 11.6307 13.6971 10.303C13.1685 9.77436 12.5092 9.4562 11.8232 9.34848L12.8087 8.36292C13.4431 8.58376 14.0388 8.94759 14.5456 9.45443C16.3421 11.2508 16.3421 14.1634 14.5456 15.9598L10.303 20.2025C8.5066 21.9989 5.59404 21.9989 3.79763 20.2025C2.00121 18.406 2.00121 15.4935 3.79763 13.6971Z" fill="#495057"></path></svg>
+                            <span>URL 복사</span>
+                        </span>
+                    </button>
+
+                </div> 
 
                 <div class="app-navbar-menu">
                     <div id="app-navbar-link-menu" class="app-navbar-link-menu" style="overflow: auto">
@@ -90,7 +116,7 @@
                                     회사 정보 관리
                                 </span>
                                 <!-- 화살표 -->
-                                <!-- <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <!-- <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg> -->
                             </a>
@@ -111,15 +137,16 @@
                                     공지사항
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon menu-items-open">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status"> 
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </a>
                             
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">공지 목록</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">공지 등록</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">노출 설정</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
@@ -135,15 +162,15 @@
                                     충전소 관리
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon menu-items-open">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </a>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">충전소 목록</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">충전소 등록</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
@@ -162,15 +189,15 @@
                                     매출 현황
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container"">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">기간별 매출</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">충전소별 매출</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
@@ -189,15 +216,16 @@
                                     거래 내역
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">일간 내역</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">주간 내역</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">월간 내역</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
@@ -216,19 +244,19 @@
                                     V2G 거래소
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
                                 <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
-                            <div class="menu-items-menu">
+                            <!-- <div class="menu-items-menu">
                                 <span class="menu-items-label">
                                     <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon">
                                         <path d="M15.8996 2.99998C15.8996 2.50292 15.4967 2.09998 14.9996 2.09998C14.5026 2.09998 14.0996 2.50292 14.0996 2.99998V22C14.0996 22.497 14.5026 22.9 14.9996 22.9C15.4967 22.9 15.8996 22.497 15.8996 22V2.99998Z" fill="#495057"></path>
@@ -239,16 +267,16 @@
                                     팔로잉｜팔로워
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
-                            </div>
+                            </div> -->
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
+                            <!-- <div class="menu-items-submenu-container" style="height: 90px">
                                 <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
-                            </div>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            </div> -->
 
                             <!-- 메인 메뉴 -->
                             <div class="menu-items-menu">
@@ -266,14 +294,14 @@
                                     전력거래 정보
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
                                 <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
                             </div>
 
@@ -315,15 +343,15 @@
                                     뉴스 관리
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">뉴스 목록</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">새 뉴스 작성</a>
                             </div>
 
                             <!-- 메인 메뉴 -->
@@ -345,15 +373,16 @@
                                     후기 관리
                                 </span>
 
-                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon">
+                                <svg height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="with-props-icon menu-items-down-icon arrow-status">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.57574 7.92426L3.42427 7.07573L12 15.6515L20.5757 7.07573L21.4243 7.92426L12 17.3485L2.57574 7.92426Z" fill="#495057"></path>
                                 </svg>
                             </div>
 
                             <!-- 서브 메뉴 -->
-                            <div class="menu-items-submenu-container" style="height: 90px">
-                                <a class="menuitems-submenu menuitems-active" href="#!" aria-current="page">#</a>
-                                <a class="menuitems-submenu" href="#!" aria-current="page">#</a>
+                            <div class="menu-items-submenu-container">
+                                <a class="menuitems-submenu" href="#!" aria-current="page">후기 목록</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">답글/응대</a>
+                                <a class="menuitems-submenu" href="#!" aria-current="page">신고/블라인드 처리</a>
                             </div>
                         </div>
                     </div>
@@ -361,4 +390,5 @@
             </div>
         </nav>
     </body>
+    <script src="/static/js/company-admin/company-sidetap.js"></script>
 </html>
