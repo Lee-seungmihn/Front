@@ -149,3 +149,7 @@
 .header-actions-btn + .header-actions-btn {
     margin-left: 8px;
 }
+
+.header-actions-btn:hover, .charging-station-select:hover {
+    background-color: #f2f4f6;
+}
