@@ -65,41 +65,57 @@ options?.forEach((li) => {
     });
 });
 
-// // [날짜 조회, 조회버튼 클릭 -> 선택 날짜 반영]
-// const searchBtn = document.getElementById('date-choice');
+// [검색 필터 드롭다운]
+// filter-select2 컨테이너로 동작
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     // URL에서 date 파라미터 읽기
-//     const url = new URL(window.location.href);
-//     const date = url.searchParams.get('date'); // YYYY-MM-DD
+// 필터 드롭다운 컨테이너만 선택 (검색 종류 select2)
+const filterContainer = document.querySelector('.filter-select2');
 
-//     // 새로고침 후에도 날짜 유지 + 충전일자 컬럼 반영
-//     if (datepicker && date) {
-//         datepicker.value = date;
+// 필터 드롭다운 내부 요소 선택 (컨테이너 기준으로만 찾기)
+const filterSelection = filterContainer?.querySelector('.select2-selection-single');
+const filterDropdown = filterContainer?.querySelector('.select2-dropdown');
+const filterRendered = filterContainer?.querySelector('.select2-selection-rendered');
+const filterOptions = filterContainer?.querySelectorAll('.select2-results-option');
 
-//         // 각 행의 첫 번째 셀 나타내기(충전일자)
-//         const chargeDateCells = document.querySelectorAll('.list-center-cols-container .list-row > .list-cell:first-child');
+// 선택박스 클릭 -> 열기/닫기
+filterSelection?.addEventListener('click', (e) => {
+    // 문서 클릭 닫기와 충돌 방지
+    e.stopPropagation();
+    // none 이 있으면 닫기, 없으면 열림
+    filterDropdown?.classList.toggle('none');
+});
 
-//         // 충전일자에 해당하는 컬럼에 선택 날짜 표시
-//         chargeDateCells.forEach((cell) => {
-//             cell.textContent = date;
-//         });
-//     }
+// 바깥 영역 클릭시 닫기
+document.addEventListener('click', (e) => {
+    filterDropdown?.classList.add('none');
+});
 
-//     // 조회버튼 클릭 시
-//     searchBtn?.addEventListener('click', (e) => {
-//         e.preventDefault(); // form 기본 submit 방지
+// 옵션 클릭시 선택값 반영 + 선택 스타일 적용 + 드롭다운 적용
+filterOptions?.forEach((li) => {
+    li.addEventListener('click', (e) => {
+        e.stopPropagation();
 
-//         // input에서 선택된 날짜 가져오기
-//         const pickedDate = datepicker.value;
+        //화면에 보여줄 목록 내용(설치일별/위치별/충전량별)
+        const label = li.textContent.trim();
 
-//         // 날짜 미선택 시 조회 동작 X
-//         if (!pickedDate) return;
+        // 선택된 값으로 텍스트 변경
+        if (filterRendered) {
+            filterRendered.textContent = label;
+            filterRendered.setAttribute('title', label);
+        }
 
-//         // 선택한 날짜를 URL에 저장 후 새로고침
-//         const nextUrl = new URL(window.location.href);
-//         nextUrl.searchParams.set('date', pickedDate);
+        // 옵션 선택 해제시, 선택 스타일 해제
+        filterOptions.forEach((item) => item.setAttribute('aria-selected', 'false'));
 
-//         window.location.href = nextUrl.toString();
-//     });
-// });
+        // 옵션 선택시, 선택 스타일 적용
+        li.setAttribute('aria-selected', 'true');
+
+        // 옵션 선택시 드롭다운 닫기
+        filterDropdown?.classList.add('none');
+    });
+    // 목록에 마우스 올렸을 때 하이라이트 디자인 적용 (hover 디자인)
+    li.addEventListener('mouseenter', () => {
+        filterOptions.forEach((item) => item.classList.remove('select2-results-option-highlighted'));
+        li.classList.add('select2-results-option-highlighted');
+    });
+});
