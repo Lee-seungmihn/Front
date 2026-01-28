@@ -125,7 +125,7 @@
                             <!-- 작성 내용 -->
                             <div class="form-field string required email">
                                 <label for="email">이메일</label>
-                                <input type="text" id="email" name="email">
+                                <input type="email" id="email" name="email">
                                
                                 <!-- 기본 노출 메세지 -->
                                 <p class="field-hint">이메일을 입력해주세요.</p>
@@ -135,10 +135,10 @@
                             </div>
 
                             <!-- 특이사항 작성 -->
-                            <div class="form-field text  required  request_description no-required-mark">
-                                <label id="request_description_label" for="request_description">특이사항</label>
-                                <textarea name="request[description]" id="request_description"></textarea>
-                                <p id="request_description_hint">* 추가로 확인이 필요하거나, 관리가 필요한 내용이 있을 경우 작성해주세요. </p>
+                            <div class="form-field text required employee-note no-required-mark">
+                                <label for="employee-note">특이사항</label>
+                                <textarea name="employeeNote" id="employee-note"></textarea>
+                                <p>* 추가로 확인이 필요하거나, 관리가 필요한 내용이 있을 경우 작성해주세요. </p>
                             </div>
                        
                             <!-- 푸터: 취소/완료 버튼 -->
