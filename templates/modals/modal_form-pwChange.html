@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>개인정보설정</title>
-<link rel="stylesheet" href="./MyPageSettings.css">
-<link rel="stylesheet" href="../../static/css/common/font.css">
-<link rel="stylesheet" href="../../static/css/common/reset.css">
-<link rel="stylesheet" href="../../static/css/common/common.css">
+<link rel="stylesheet" href="../../static/css/common/font.css"/>
+<link rel="stylesheet" href="../../static/css/common/reset.css"/>
+<link rel="stylesheet" href="../../static/css/common/fontawesome.css"/>
+<link rel="stylesheet" href="../../static/css/common/common.css"/>
+<link rel="stylesheet" href="../../static/css/common/util.css"/>
 <link rel="stylesheet" href="../../static/css/components/modals/modal-m.css">
 </head>
 <body>
@@ -15,9 +16,9 @@
     <div style="height: 200vh;">
         <div style="height: 100vh; background: #fff;">
             <div class="buttonGroup" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
-                <button class="button button-size button-mint button-confirm">
+                <button class="button button-size button-mint button-confirm" type="button" onclick="modalOpen('modal')">
                     <span>
-                        <span>확인</span>
+                        <span>확인</span> 
                     </span>
                 </button>
             </div>
@@ -33,13 +34,13 @@
         </div>
     </div>
     <!-- //예시 -->
-    <div id="modal">
+    <div id="modal" class="modal">
         <div class="Modal_overlay">
             
             <div id="FormModal" class="FormModal-container">
                 <div class="FormModal-header">
                     <div class="FormModal-button">
-                        <button class="button button-close">
+                        <button class="button button-close" onclick="modalCloses()">
                             <span>
                                 <span>
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" class="WithProps-icon" style="height: 24px; width: 24px;">

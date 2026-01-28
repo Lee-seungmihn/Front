@@ -1,6 +1,6 @@
 // layout
 const body = document.querySelector("body");
-const modal = document.getElementById("modal");
+const modals = document.querySelectorAll(".modal");
 
 // buttons
 const zz1Btn = document.getElementById("QuickV2G");
@@ -32,36 +32,51 @@ inputFields.forEach(inputField => {
     }
 })
 
-// 확인
-// const modalOpen = () => {
-//     body.classList.add("hidden");
-//     modal.classList.add('active');
-// }
-// const modalClose = () => {
-//     body.classList.remove("hidden");
-//     modal.classList.remove('active');
-// }
+// 모달 영역
+// ※사용 시 최상단 부모 태그의 id를 적어주셔야 합니다.
+// onclikc="modalOpen([닫을 모달아이디]);"
+const modalOpen = (thisModal) => {
+    const OpenModalName = document.getElementById(thisModal);
+    body.classList.add("hidden");
+    OpenModalName.classList.add('active');
+}
 
-confirms.forEach(confirm => {
-    confirm.addEventListener("click", () =>{
-        body.classList.toggle("hidden")
-        modal.classList.toggle('active')
-        // setTimeout(() => {
-        //     modal.classList.toggle('none')
-        // }, 500);
+// ※닫기 버튼에 넣어주세요.
+// onclikc="modalCloses()"
+const modalCloses = () => {
+    const modals = document.querySelectorAll(".modal.active");
+    body.classList.remove("hidden");
+    modals.forEach(modal => {
+        console.log(modal);
+        modal.classList.remove('active');
     })
-});
+}
+// ※닫기 버튼에 넣어주세요.
+// onclikc="onlyeClose([닫을 모달아이디]);"
+const onlyClose = (onlyOne) => {
+    const modal = document.getElementById(onlyOne);
+    body.classList.remove("hidden");
+    modal.classList.remove('active');
+}
 
-// 닫기
-closes.forEach(close => {
-    close.addEventListener("click", () =>{
-        modal.classList.remove('active')
-        body.classList.remove("hidden")
-        // setTimeout(() => {
-        //     modal.classList.toggle('none')
-        // }, 500);
-    })
-})
-// overlay.addEventListener("click", (e) => {
-//     if(e.target.classList.contains)
-// })
+// 쇼 이벤트
+const showToast = (showId) => {
+    const showContainer = document.getElementById(showId);
+
+    showContainer.classList.remove('none', 'toast_hide');
+    showContainer.classList.add('toast_show');
+
+    setTimeout(() => {
+        hideToast(showContainer);
+    }, 2000);
+};
+// 하이드 이벤트
+const hideToast = (targetEl) => {
+    targetEl.classList.remove('toast_show');
+    targetEl.classList.add('toast_hide');
+    setTimeout(() => {
+        if (targetEl.classList.contains('toast_hide')) {
+            targetEl.classList.add('none');
+        }
+    }, 550);
+};

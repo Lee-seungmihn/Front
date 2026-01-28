@@ -122,22 +122,52 @@
 /* .quickButton-container .quickButton-pageTop:hover{
     
 } */
+ /* 퀵메뉴 - 페이지탑 */
 .quickButton-container .quickButton-pageTop{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #222;
+    border: 2px solid #222;
     border-radius: 50%;
     background-color: #fff;
+    transition: background .3s;
     width: 44px;
     height: 44px;
+}
+.quickButton-container .quickButton-pageTop:hover{
+    background: #dfdfdf;
+}
+/* 퀵메뉴 - 쪽지 */
+.quickButton-container .quickButton-letter:hover{
+    background: #5f5f5f;
+}
+.quickButton-container .quickButton-letter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #222;
+    border-radius: 50%;
+    background-color: #666;
+    transition: background .3s;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+}
+.quickButton-container .quickButton-letter i{
+    color: inherit;
+}
+/* 퀵메뉴 - ZZ1 간편 판매 */
+.quickButton-container .quickButton-V2G:hover {
+    transform: rotate(90deg);
 }
 .quickButton-container .quickButton-V2G {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid #222;
     border-radius: 50%;
-    background-color: #212529;
+    background-color: #333;
+    transition: transform .3s;
     width: 44px;
     height: 44px;
 }

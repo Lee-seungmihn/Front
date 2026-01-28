@@ -146,18 +146,29 @@
 /* 맵핀 부분 */
 .addessPin-container{
     display: flex;
-    min-width: 50px;
     padding: 8px;
 }
-.addessPin-container i{
+/* .addessPin-container svg{} */
+.addessPin-container svg path{
+    fill:#333;
+}
+/* .addessPin-container i{
     font-size: 22px;
     color: #666;
-}
+} */
 .addessPin-container p{
-    font-size: 10px;
+    font-size: 22px;
     color: #666;
-    line-height: 1.1;
+    line-height: 1;
     margin-left: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+.addessPin-container p.txt-left{
+    text-align: left;
+}
+.addessPin-container p.txt-right{
+    text-align: right;
 }
 /* 알림 부분 */
 .notice-container{
