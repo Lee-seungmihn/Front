@@ -138,7 +138,7 @@
 .comp-datepicker .inner-datepicker {
     display: inline-block;
     position: relative;
-    width: 360px;
+    width: 280px;
 }
 
 /* 아이콘 이미지 */
@@ -233,7 +233,7 @@
 }
 
 .comp-datepicker .tf-comm.datepicker-range {
-    width: 360px;
+    width: 280px;
     padding-left: 52px;
 }
 

@@ -194,3 +194,9 @@ form footer {
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: 0.15s ease-in-out;
 }
+
+
+/* 특이사항 영역 */
+textarea {
+    resize: none;
+}

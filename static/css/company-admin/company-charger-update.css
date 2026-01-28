@@ -201,3 +201,7 @@ input[readonly] {
   color: #a5a5a5;
   cursor: not-allowed;
 }
+
+textarea {
+    resize: none;
+}
