@@ -512,7 +512,7 @@ button {
 }
 
 .Heading_heading.Heading_invisible,
-.DescriptionList_descriptionList__2JuZe .DescriptionList_invisible__1UvxH {
+.DescriptionList_descriptionList .DescriptionList_invisible {
     position: absolute;
     margin: -1px;
     clip: rect(0 0 0 0);
@@ -638,22 +638,22 @@ button {
     color: #868e96;
 }
 
-.Button_button__1U5se.Button_gray__2MMct {
+.Button_button.Button_gray {
     border-color: #cdd3d8;
     color: #495057;
 }
 
-.Button_button__1U5se.Button_circular__1w_8Y {
+.Button_button.Button_circular_8Y {
     border-radius: 999em;
 }
 
-.Button_button__1U5se.Button_sm__ll {
+.Button_button.Button_sm__ll {
     padding-inline: 12px;
     height: 32px;
     font-size: 14px;
 }
 
-a.Button_button__1U5se {
+a.Button_button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -665,7 +665,7 @@ a.Button_button__1U5se {
     content: "";
 }
 
-.Button_button__1U5se {
+.Button_button {
     position: relative;
     transition-property: background-color, border-color, color, opacity;
     transition-duration: .15s;
@@ -685,13 +685,13 @@ a.Button_button__1U5se {
     line-height: 1.5;
 }
 
-.Button_button__1U5se span {
+.Button_button span {
     display: inline-flex;
     align-items: center;
     vertical-align: top;
 }
 
-.MyGGshSupporterProjectInfoCard_container__2thJk {
+.MyGGshSupporterProjectInfoCard_container {
     display: flex;
     position: relative;
     flex: 1;
@@ -699,7 +699,7 @@ a.Button_button__1U5se {
     margin-bottom: -14px;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC {
+.MyGGshSupporterProjectInfoCard_project {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -707,7 +707,7 @@ a.Button_button__1U5se {
     padding-bottom: 4px;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -717,7 +717,7 @@ strong {
     font-weight: 700;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u .MyGGshSupporterProjectInfoCard_projectContent__7x8Kj {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -725,7 +725,7 @@ strong {
     width: 64px;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u .MyGGshSupporterProjectInfoCard_projectContent__7x8Kj .MyGGshSupporterProjectInfoCard_link__2cEeF {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link {
     display: flex;
     position: relative;
     flex: 1;
@@ -735,19 +735,19 @@ strong {
     gap: 2px;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u .MyGGshSupporterProjectInfoCard_projectContent__7x8Kj .MyGGshSupporterProjectInfoCard_link__2cEeF .MyGGshSupporterProjectInfoCard_img__wjeUK {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_img__wjeUK {
     margin-bottom: 2px;
     width: 24px;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u .MyGGshSupporterProjectInfoCard_projectContent__7x8Kj .MyGGshSupporterProjectInfoCard_link__2cEeF .MyGGshSupporterProjectInfoCard_text__1RR8g {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_text {
     font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
     color: #343a40;
 }
 
-.MyGGshSupporterProjectInfoCard_project__1JewC .MyGGshSupporterProjectInfoCard_projectLink__3h13u .MyGGshSupporterProjectInfoCard_projectContent__7x8Kj .MyGGshSupporterProjectInfoCard_link__2cEeF .MyGGshSupporterProjectInfoCard_count__2mEtH {
+.MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link .MyGGshSupporterProjectInfoCard_count {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
@@ -767,7 +767,7 @@ strong {
     color: #495057;
 }
 
-.LabelBadge_badge.LabelBadge_circular__3uOAX {
+.LabelBadge_badge.LabelBadge_circular {
     border-radius: 16px;
 }
 
@@ -787,7 +787,7 @@ strong {
     flex-shrink: 0;
 }
 
-.MyGGshSupporterBenefitCard_container__2mRVX {
+.MyGGshSupporterBenefitCard_container {
     display: flex;
     flex-direction: column;
     border: 1px solid #e9ecef;
@@ -795,28 +795,28 @@ strong {
     padding: 14px 16px;
 }
 
-.MyGGshSupporterBenefitCard_container__2mRVX .MyGGshSupporterBenefitCard_value__DMzPb {
+.MyGGshSupporterBenefitCard_container .MyGGshSupporterBenefitCard_value__DMzPb {
     display: flex;
     flex: 1;
     width: 100%;
 }
 
-.MyGGshSupporterAccumulate_containerLink__1cL8N {
+.MyGGshSupporterAccumulate_containerLink {
     cursor: pointer;
 }
 
-.MyGGshSupporterAccumulate_container__FC4sA {
+.MyGGshSupporterAccumulate_container {
     display: flex;
     flex: 1;
     justify-content: space-between;
 }
 
-.MyGGshSupporterAccumulate_info__2Crbs .MyGGshSupporterAccumulate_title__1zN0P {
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_title {
     display: inline-block;
     width: 40px;
 }
 
-.MyGGshSupporterAccumulate_info__2Crbs .MyGGshSupporterAccumulate_title__1zN0P .MyGGshSupporterAccumulate_name__3whWI {
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_title .MyGGshSupporterAccumulate_name {
     font-size: 12px;
     line-height: 1.5;
     line-height: 20px;
@@ -825,7 +825,7 @@ strong {
     font-weight: 500;
 }
 
-.MyGGshSupporterAccumulate_info__2Crbs .MyGGshSupporterAccumulate_value__v_UcY {
+.MyGGshSupporterAccumulate_info .MyGGshSupporterAccumulate_value__v_UcY {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.5;
@@ -838,12 +838,12 @@ strong {
     color: #343a40;
 }
 
-.MyGGshSupporterBenefitCard_container__2mRVX .MyGGshSupporterBenefitCard_value__DMzPb .MyGGshSupporterBenefitCard_accumulateDivider__2ytbi {
+.MyGGshSupporterBenefitCard_container .MyGGshSupporterBenefitCard_value__DMzPb .MyGGshSupporterBenefitCard_accumulateDivider {
     margin: 0 12px;
     height: auto;
 }
 
-.Divider_divider.Divider_vertical__2VMWN.Divider_spacing5__1AZmj {
+.Divider_divider.Divider_vertical.Divider_spacing5 {
     margin-inline: 16px;
     margin-block: 0;
 }
@@ -857,13 +857,13 @@ strong {
     margin-block: 0;
 }
 
-.Divider_divider.Divider_vertical__2VMWN {
+.Divider_divider.Divider_vertical {
     display: inline-block;
     height: 100%;
     width: 1px;
 }
 
-.MyGGshSupporterAccumulate_info__2Crbs {
+.MyGGshSupporterAccumulate_info {
     display: block;
     flex-direction: row;
     justify-content: space-between;
@@ -907,7 +907,7 @@ strong {
     overflow-wrap: anywhere;
 }
 
-.WishIconButton_container .WishIconButton_icon__2n1ra path {
+.WishIconButton_container .WishIconButton_icon path {
     fill: #21252966;
     stroke: #fff;
     transition: fill .25s ease-in-out;
@@ -1133,7 +1133,7 @@ button {
     text-align: center;
 }
 
-.Button_button__1U5se {
+.Button_button {
     position: relative;
     transition-property: background-color, border-color, color, opacity;
     transition-duration: .15s;

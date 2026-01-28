@@ -621,12 +621,12 @@ button {
     color: #adb5bd;
 }
 
-.ConfirmModal_confirmModal .ConfirmModal-module_footer__0f141 {
+.ConfirmModal_confirmModal .ConfirmModal-module_footer {
     position: relative;
     margin-top: 24px;
 }
 
-.ConfirmModal_confirmModal .ConfirmModal-module_footer__0f141 .ConfirmModal-module_buttonGroup__396f5 {
+.ConfirmModal_confirmModal .ConfirmModal-module_footer .ConfirmModal-module_buttonGroup {
     display: inline-flex;
     justify-content: flex-end;
     width: 100%;
@@ -634,7 +634,7 @@ button {
 }
 
 
-.ConfirmModal_confirmModal .ConfirmModal-module_content .ConfirmModal-module_message__4479a {
+.ConfirmModal_confirmModal .ConfirmModal-module_content .ConfirmModal-module_message {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -1191,9 +1191,9 @@ input:not(:disabled) {
     color: #fff;
 }
 
-.Button_button:not(.Button-module_loading__b3841).Button_disabled,
-.Button_button:not(.Button-module_loading__b3841):disabled,
-.Button_button:not(.Button-module_loading__b3841)[disabled] {
+.Button_button:not(.Button-module_loading).Button_disabled,
+.Button_button:not(.Button-module_loading):disabled,
+.Button_button:not(.Button-module_loading)[disabled] {
     opacity: .4;
     cursor: default;
     pointer-events: none;
@@ -1285,7 +1285,7 @@ input:not(:disabled) {
     padding-bottom: 4px;
 }
 
-.Button-module_button__d78c2 {
+.Button-module_button {
     position: relative;
     transition-property: background-color, border-color, color, opacity;
     transition-duration: .15s;
@@ -1529,7 +1529,7 @@ input:not(:disabled) {
     background-color: rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: .3s;
-    /* animation: AlertModal-module_overlayInit__d02cc .25s; */
+    /* animation: AlertModal-module_overlayInit .25s; */
 }
 /* modal style */
  /* alert modal */
@@ -1895,3 +1895,4 @@ button[disabled].button-mint {
     0% { transform: translateY(-100px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
 }
+

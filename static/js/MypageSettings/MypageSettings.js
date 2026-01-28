@@ -45,7 +45,7 @@ emailOkaymodal.addEventListener("click", () => {
 
 
 // layout
-const body = document.querySelector("body");
+const bodys = document.querySelector("body");
 const modal = document.getElementById("modal");
 
 // buttons
@@ -90,7 +90,7 @@ inputFields.forEach(inputField => {
 
 confirms.forEach(confirm => {
     confirm.addEventListener("click", () => {
-        body.classList.toggle("hidden")
+        bodys.classList.toggle("hidden")
         modal.classList.toggle('active')
         // setTimeout(() => {
         //     modal.classList.toggle('none')
@@ -98,20 +98,19 @@ confirms.forEach(confirm => {
     })
 });
 
-const passwordmodals = document.querySelectorAll(".settingItem_container");
-passwordmodals.forEach(passwordmodal => {
+const passwordmodal = document.querySelector(".settingItem_container");
     passwordmodal.addEventListener("click", () => {
-        body.classList.toggle("hidden")
+        bodys.classList.toggle("hidden")
         modal.classList.toggle('active')
     })
-});
+;
 
 
 // 닫기
 closes.forEach(close => {
     close.addEventListener("click", () => {
         modal.classList.remove('active')
-        body.classList.remove("hidden")
+        bodys.classList.remove("hidden")
         // setTimeout(() => {
         //     modal.classList.toggle('none')
         // }, 500);
