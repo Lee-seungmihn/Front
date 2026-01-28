@@ -649,7 +649,7 @@
 .select2-container .select2-selection-single {
     display: block;
     position: relative;
-    height: 32px;
+    height: 40px;
     border: 1px solid #dde2e6;
     background: #fff;
     border-radius: 3px;
@@ -678,14 +678,7 @@
     white-space: nowrap;
 }
 
-/* .select2-single-search.small+.select2-container .select2-selection-single .select2-selection-rendered, .select2-single.small+.select2-container .select2-selection-single .select2-selection-rendered {
-    padding-left: 12px;
-    padding-right: 38px;
-    font-size: 12px;
-    line-height: 32px;
-} */
-
-.select2-container.small .select2-selection-single .select2-selection-rendered {
+.select2-single-search.small+.select2-container .select2-selection-single .select2-selection-rendered, .select2-single.small+.select2-container .select2-selection-single .select2-selection-rendered {
     padding-left: 12px;
     padding-right: 38px;
     font-size: 12px;
@@ -697,7 +690,7 @@
     top: 0;
     right: 0;
     width: 40px;
-    height: 32px;
+    height: 40px;
 }
 
 .select2-single-search.small+.select2-container .select2-selection-single .select2-selection-arrow, .select2-single.small+.select2-container .select2-selection-single .select2-selection-arrow {
@@ -906,11 +899,5 @@ input[type="date"] {
 .select2-dropdown.small .select2-results-option {
     padding: 7px 12px;
     font-size: 12px;
-}
-
-/* 마우스 올렸을 때(하이라이트) → 배경 + 글자색 */
-.select2-container .select2-results-option-highlighted {
-  background: #f2f4f6;
-  color: #00b2b2;
 }
 

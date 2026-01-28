@@ -284,7 +284,8 @@
 .wrap-filter .box-right .btn {
     width: 150px;
     height: 100%;
-    line-height: normal;
+    /* line-height: normal; */
+    line-height: 50px; /* 버튼 높이 */
 }
 
 .btn-icon .icon {
@@ -909,8 +910,64 @@ input[type="date"] {
 }
 
 /* 마우스 올렸을 때(하이라이트) → 배경 + 글자색 */
-.select2-container .select2-results-option-highlighted {
+/* .select2-container .select2-results-option-highlighted {
   background: #f2f4f6;
   color: #00b2b2;
+} */
+
+/* 검색 필터 버튼 (설치일 / 위치 / 충전량) */
+/* .filter-mode {
+    display: flex;
+    gap: 8px;
+    margin-right: 12px;
+} */
+
+/* [검색종류 / 입력영역] */
+/* 선택된 버튼 스타일 */
+/* .filter-mode-btn.is-active {
+    border-color: #00b2b2;
+    color: #00b2b2;
+} */
+
+/* 버튼 정렬 */
+/* .filter-panel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+} */
+
+/* js용) 선택되지 않은 종류의 검색 영역을 숨기기 위함 */
+/* .none {
+    display: none !important;
+} */
+
+
+/* [검색 필터] select2 크기 확장
+    - 페이지 사이즈 드롭다운은 그대로 두고
+    - 검색 종류 드롭다운(필터)만 크게 보이게 함 */
+
+/* 바깥 컨테이너 폭 */
+.select2-container.filter-select2{
+    width: 180px !important; /* 기존 120px보다 넓게 */
 }
 
+/* 선택 영역(박스) 높이 */
+.select2-container.filter-select2 .select2-selection-single{
+    height: 50px !important; 
+    display: flex !important;
+    align-items: center !important; 
+    box-sizing: border-box;
+}
+
+/* 텍스트 영역 세로 정렬 + 여백 */
+.select2-container.filter-select2 .select2-selection-single .select2-selection-rendered{
+    line-height: 40px !important;  
+    padding-left: 18px !important;
+    padding-right: 48px !important; 
+    font-size: 15px !important;
+}
+
+/* 화살표 영역도 높이 맞추기 */
+.select2-container.filter-select2 .select2-selection-single .select2-selection-arrow{
+    height: 50px !important;
+}
