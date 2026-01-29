@@ -41,6 +41,23 @@ document.querySelectorAll(".closebutton").forEach(btn => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const modal5 = document.getElementById("modal5");
+    const btn = document.querySelector(".closebutton1");
+
+    if (btn && modal5) {
+        btn.addEventListener("click", (e) => {
+            
+            document.querySelectorAll(".ConfirmModal_overlay").forEach(modal => {
+                modal.style.display = "none";
+            });
+
+            modal5.style.display = "flex";
+        });
+    }
+});
+
+
 document.querySelectorAll(".okayButton").forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();

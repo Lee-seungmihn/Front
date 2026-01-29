@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
@@ -61,7 +60,6 @@
     font-weight: 900;
     font-display: swap;
 }
-
 @charset "UTF-8";@import"https://static.wadiz.kr/vendor/froala-editor/4.0.15/froala_style.min.css";.WithProps-module_icon {
     display: block;
     transform: scale(1);
@@ -899,7 +897,8 @@ a.Button-module_button.Button-module_block {
     padding-top: 24px;
     width: 100%;
     height: 100%;
-    max-height: 100vh
+    max-height: 100vh;
+    max-height: 100dvh
 }
 
 .ConfirmModal-module_sizeSheet,.ConfirmModal-module_sizeSheetMD {
@@ -3131,7 +3130,8 @@ body {
     max-width: 360px;
     width: 100%;
     margin: 0 auto;
-    height: 100vh
+    height: 100vh;
+    height: 100dvh
 }
 
 .ErrorContent-module_container .ErrorContent-module_header {
@@ -14293,7 +14293,7 @@ button {
     background-color: #fff;
     width: 600px;
     height: fit-content;
-    max-height: 90dvh;
+    max-height: 90vh;
     overflow: hidden
 }
 
@@ -16563,11 +16563,13 @@ button {
 }
 
 .KeyVisual-module_container .KeyVisual-module_fullHeight {
-    height: calc(100vh - 112px)
+    height: calc(100vh - 112px);
+    height: calc(100dvh - 112px)
 }
 
 .KeyVisual-module_container .KeyVisual-module_fullHeightApp {
-    height: calc(100vh - 56px)
+    height: calc(100vh - 56px);
+    height: calc(100dvh - 56px)
 }
 
 .KeyVisual-module_container .KeyVisual-module_lottieWrapper {
@@ -16645,7 +16647,8 @@ button {
     }
 
     .KeyVisual-module_container .KeyVisual-module_fullHeight {
-        height: calc(100vh - 112px)
+        height: calc(100vh - 112px);
+        height: calc(100dvh - 112px)
     }
 
     .KeyVisual-module_lottie {
@@ -23540,6 +23543,7 @@ html.show-footer .IntegratedExhibition-module_share {
     width: 100%;
     height: 100%;
     max-height: 100vh;
+    max-height: 100dvh;
     overflow: hidden;
     color: #f2f4f6;
     -webkit-overflow-scrolling: touch
@@ -25359,12 +25363,14 @@ div.PopMenu-module_box.PopMenu-module_left {
 }
 
 .CommunityCommentWriteForm-module_container .CommunityCommentWriteForm-module_writeWrap .CommunityCommentWriteForm-module_contentWrapperMobile {
-    max-height: calc(100vh - 276px)
+    max-height: calc(100vh - 276px);
+    max-height: calc(100dvh - 276px)
 }
 
 @media screen and (max-height: 450px) {
     .CommunityCommentWriteForm-module_container .CommunityCommentWriteForm-module_writeWrap .CommunityCommentWriteForm-module_contentWrapperMobile {
-        max-height:calc(100vh - 200px)
+        max-height:calc(100vh - 200px);
+        max-height: calc(100dvh - 200px)
     }
 }
 
@@ -27577,7 +27583,8 @@ div.PopMenu-module_box.PopMenu-module_left {
     justify-content: center;
     background-color: #f9fafb;
     width: 100%;
-    min-height: 100vh
+    min-height: 100vh;
+    min-height: 100dvh
 }
 
 .CommentList-module_container .CommentList-module_wrapper {
@@ -27803,7 +27810,8 @@ div.PopMenu-module_box.PopMenu-module_left {
     justify-content: center;
     background-color: #f9fafb;
     width: 100%;
-    min-height: 100vh
+    min-height: 100vh;
+    min-height: 100dvh
 }
 
 .SignatureList-module_container .SignatureList-module_wrapper {
@@ -27959,7 +27967,8 @@ div.PopMenu-module_box.PopMenu-module_left {
     justify-content: center;
     background-color: #f9fafb;
     width: 100%;
-    min-height: 100vh
+    min-height: 100vh;
+    min-height: 100dvh
 }
 
 .SatisfactionList-module_container .SatisfactionList-module_wrapper {
@@ -28051,6 +28060,10 @@ div.PopMenu-module_box.PopMenu-module_left {
     margin: 16px;
     overflow: visible;
     max-height: 1000px
+}
+
+.Reward-module_container.Reward-module_expand .Reward-module_content .Reward-module_text {
+    white-space: pre-wrap
 }
 
 .RewardList-module_container {
@@ -33005,6 +33018,7 @@ label.Radio-module_radio.Radio-module_error>.Radio-module_icon {
     position: fixed;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     top: 0;
     color: #212529
 }
@@ -33975,6 +33989,7 @@ label.Radio-module_radio.Radio-module_error>.Radio-module_icon {
 
 .MyWadizInquiriesMakerPage-module_container {
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     background-color: #f9fafb
 }
 
@@ -33987,11 +34002,13 @@ label.Radio-module_radio.Radio-module_error>.Radio-module_icon {
     margin: 0 auto;
     background-color: #fff;
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     height: 100%
 }
 
 .MyWadizInquiriesSupporterPage-module_container {
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     background-color: #f9fafb
 }
 
@@ -34004,6 +34021,7 @@ label.Radio-module_radio.Radio-module_error>.Radio-module_icon {
     margin: 0 auto;
     background-color: #fff;
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     height: 100%
 }
 
@@ -42404,6 +42422,7 @@ div[title] {
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 154px);
+    height: calc(100dvh - 154px);
     min-height: 300px;
     text-align: center;
     color: #868e96
@@ -43231,10 +43250,10 @@ div[title] {
 }
 
 .AvailableCouponsCard-module_couponBox {
-    display: flex;
-    margin: 16px -16px;
     overflow-x: auto;
-    gap: 16px
+    display: flex;
+    gap: 16px;
+    margin: 16px -16px
 }
 
 .AvailableCouponsCard-module_couponBox::-webkit-scrollbar {
@@ -43246,19 +43265,19 @@ div[title] {
     font-weight: 400;
     line-height: 1.5;
     flex-shrink: 0;
-    margin: 0;
-    background-image: url(https://static.wadiz.kr/global/assets/images/downloadable-coupon.svg);
-    background-repeat: no-repeat;
-    padding-right: 56px;
+    gap: 0 2px;
     width: 136px;
     height: 64px;
+    margin: 0;
+    padding-right: 56px;
     color: #fff;
-    gap: 0 2px
+    background-image: url(https://static.wadiz.kr/global/assets/images/downloadable-coupon.svg);
+    background-repeat: no-repeat
 }
 
 .AvailableCouponsCard-module_coupon.AvailableCouponsCard-module_done {
-    filter: grayscale(100%);
-    opacity: .3
+    opacity: .3;
+    filter: grayscale(100%)
 }
 
 .AvailableCouponsCard-module_coupon:first-child {
@@ -43277,9 +43296,9 @@ div[title] {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 4px;
     width: 94px;
     height: 100%;
+    padding: 4px;
     text-align: center
 }
 
@@ -45456,7 +45475,8 @@ button.MakerFollowingButton-module_alarmButton span:first-child .MakerFollowingB
     opacity: .1;
     z-index: 1;
     width: 100vw;
-    height: 100vh
+    height: 100vh;
+    height: 100dvh
 }
 
 .ContextMenu-module_container {
@@ -45672,6 +45692,7 @@ button.MakerFollowingButton-module_alarmButton span:first-child .MakerFollowingB
     padding: 0 16px;
     max-width: 360px;
     height: calc(100vh - 56px);
+    height: calc(100dvh - 56px);
     gap: 24px
 }
 
@@ -45894,6 +45915,29 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
 .SupportShareDetail-module_shareButtonContent {
     display: flex;
     column-gap: 6px
+}
+
+.CuratedProjects-module_container {
+    max-width: 560px;
+    margin: 0 auto
+}
+
+.CuratedProjects-module_container .CuratedProjects-module_title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    margin-bottom: 24px
+}
+
+.CuratedProjects-module_container .CuratedProjects-module_grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 24px 8px
+}
+
+.CuratedProjects-module_container .CuratedProjects-module_grid .CuratedProjects-module_cardWrapper {
+    width: 100%
 }
 
 .ShortFormModal-module_confirmModalCustom {
@@ -46442,6 +46486,7 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
     position: relative;
     background-color: #f9fafb;
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     color: #212529
 }
 
@@ -46519,11 +46564,21 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
     padding-bottom: 73px
 }
 
+.MySupportShare-module_container .MySupportShare-module_curatedProjectsWrapper {
+    margin-top: 32px;
+    width: 100%
+}
+
+.MySupportShare-module_container .MySupportShare-module_emptyPointCase {
+    margin-top: 12px
+}
+
 .SupportShareGuide-module_container {
     --flex-gap: 8px;
     position: relative;
     background-color: #f9fafb;
     min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     color: #212529
 }
 
@@ -46781,6 +46836,11 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
         font-weight: 500;
         line-height: 1.5
     }
+}
+
+.SupportShareGuide-module_container .SupportShareGuide-module_curatedProjectsSection {
+    text-align: left;
+    align-items: flex-start
 }
 
 .Banner-module_container {
@@ -47672,6 +47732,8 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
     color: #868e96
 }
 
+
+
 .Header-module_container .Header-module_textContainer {
     font-size: 16px;
     font-weight: 700;
@@ -48310,7 +48372,7 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
     background-color: #fff;
     width: 600px;
     height: fit-content;
-    max-height: 80dvh;
+    max-height: 80vh;
     overflow: hidden
 }
 
@@ -48723,10 +48785,3 @@ body:has([class^=MobileHeadupBanner_mobileHeadupBanner]) .SupportShareDetail-mod
         line-height: 1.5
     }
 }
-
-
-#followBtn.is-following {
-    background-color: #e9ecef; /* 회색 */
-    color: #495057;
-}
-

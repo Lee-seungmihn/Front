@@ -1936,3 +1936,19 @@ button {
     flex-wrap: wrap;
     overflow: hidden;
 }
+
+.battery-wrapper {
+    position: relative;   
+    width: 50px;         
+    height: 24px;         
+}
+
+.battery-wrapper i {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    color: gray;          
+    font-size: 24px;      
+    transition: all 0.3s;
+}
+

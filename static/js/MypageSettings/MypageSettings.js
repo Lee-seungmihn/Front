@@ -46,10 +46,10 @@ emailOkaymodal.addEventListener("click", () => {
 
 // layout
 const bodys = document.querySelector("body");
-const modal = document.getElementById("modal");
+const modal = document.getElementById("passwordModal");
 
 // buttons
-const zz1Btn = document.getElementById("QuickV2G");
+const zz1Btn = document.getElementById("settingItem_container");
 const confirms = document.querySelectorAll(".button-confirm");
 const closes = document.querySelectorAll(".button-close");
 

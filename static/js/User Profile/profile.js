@@ -169,3 +169,24 @@ wishButtonremoves.forEach(button => {
         showwish(isActive ? svgRemove : add);
     });
 });
+
+const score = 20;  
+
+const batteryWrapper = document.querySelector(".MyGGshSupporterProfileCard_profileUser .battery-wrapper");
+if (batteryWrapper) {
+    const batteries = batteryWrapper.querySelectorAll("i");
+
+    // 숨기기
+    batteries.forEach(battery => battery.style.display = "none");
+
+    // 점수 계산
+    let lengs = 0;
+    if (score >= 0 && score < 20) lengs = 0;
+    else if (score >= 20 && score < 40) lengs = 1;
+    else if (score >= 40 && score < 60) lengs = 2;
+    else if (score >= 60 && score < 80) lengs = 3;
+    else if (score >= 80 && score <= 100) lengs = 4;
+
+    // 해당 아이콘만 보이게
+    batteries[lengs].style.display = "inline-block";
+}

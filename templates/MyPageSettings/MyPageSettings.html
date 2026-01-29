@@ -10,12 +10,12 @@
 
 <body>
     <div id="GGSH-toast-container-component">
-    <div class="ToastContainer_container">
-        <div class="Toast_container">
-            <div class="Toast_content">닉네임을 변경했어요.</div>
+        <div class="ToastContainer_container">
+            <div class="Toast_container">
+                <div class="Toast_content">닉네임을 변경했어요.</div>
+            </div>
         </div>
     </div>
-</div>
     <div id="root">
         <header class="header_container">
             <div class="header_content">
@@ -101,8 +101,8 @@
                             <hr class="divider">
                             <div class="menuItem_container">
                                 <dl class="menuItem_left">
-                                    <dt class="menuItem_title">국가/지역</dt>
-                                    <dd class="menuItem_description">한국 (KRW) ₩</dd>
+                                    <dt class="menuItem_title">지역</dt>
+                                    <dd class="menuItem_description">위치</dd>
                                 </dl>
                                 <div class="menuItem_right">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -132,8 +132,23 @@
                                     </div>
                                 </div>
                                 <hr class="divider">
-                                <a class="settingItem_container">
+                                <a class="settingItem_container"
+                                    href="http://127.0.0.1:5500/templates/carSettings/carSettings.html">
                                     <span class="settingItem_title">차량 설정</span>
+                                    <div class="settingItem_edit">
+                                        <svg viewBox="0 0 24 24"
+                                            xmlns="http://127.0.0.1:5500/templates/carSettings/carSettings.html"
+                                            width="24" class="withProps_icon" style="height: 24px; width: 24px;">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M7.92428 2.57573L7.07575 3.42426L15.6515 12L7.07575 20.5757L7.92428 21.4243L17.3485 12L7.92428 2.57573Z"
+                                                fill="#495057"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <hr class="divider">
+                                <a href="http://127.0.0.1:5500/templates/User%20Profile/blockList.html"
+                                    class="settingItem_container">
+                                    <span class="settingItem_title">차단/신고 설정</span>
                                     <div class="settingItem_edit">
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
                                             class="withProps_icon" style="height: 24px; width: 24px;">
@@ -144,9 +159,9 @@
                                     </div>
                                 </a>
                                 <hr class="divider">
-                                <a href="https://www.GGsh.kr/web/waccount/notificationSetting"
+                                <a href="http://127.0.0.1:5500/templates/MyPageSettings/notificationSetting.html"
                                     class="settingItem_container">
-                                    <span class="settingItem_title">차단/신고 설정</span>
+                                    <span class="settingItem_title">알림 설정</span>
                                     <div class="settingItem_edit">
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
                                             class="withProps_icon" style="height: 24px; width: 24px;">
@@ -190,11 +205,13 @@
                         <hr class="Divider_divider Divider_horizontal Divider_light Divider_spacing "
                             style="height: 8px; left: -16px; width: calc(100% + 32px);">
                         <div class="settings_accountArea">
-                            <button class="Button_button" type="button">
-                                <span>
-                                    <span>회원 탈퇴</span>
-                                </span>
-                            </button>
+                            <a href="http://127.0.0.1:5500/templates/deleteaccount/deleteaccount.html">
+                                <button class="Button_button" type="button">
+                                    <span>
+                                        <span>회원 탈퇴</span>
+                                    </span>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -318,15 +335,6 @@
                                 </div>
                                 <button class="Button_button Button_mint Button_contained buttonEmail_okay Button_block"
                                     type="button"><span><span>확인</span></span>
-                                </button>
-                                <div class="ConfirmPassword_textWrapperMobile"><a
-                                        class="Button_button Button_gray Button_textLink Button_sm"
-                                        href="https://account.wadiz.kr/find-password?isForOnlyFindPassword=true"><span><span>비밀번호
-                                                찾기
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
                             </form>
                         </div>
                     </div>
@@ -369,12 +377,12 @@
                     </div>
                 </div>
             </div>
-            <div id="modal">
+            <div id="passwordModal" class="modal">
                 <div class="Modal_overlay">
                     <div id="FormModal" class="FormModal-container">
                         <div class="FormModal-header">
                             <div class="FormModal-button">
-                                <button class="button button-close">
+                                <button class="button button-close" onclick="modalCloses(settingItem_container)">
                                     <span>
                                         <span>
                                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -447,8 +455,7 @@
                                                 </button>
                                             </div>
                                             <p class="input-message nomal">영문, 숫자, 특수문자 !@#$%^&amp;*+=-를 조합한 8자 이상으로 입력해
-                                                주세요.
-                                            </p>
+                                                주세요.</p>
                                         </div>
                                     </div>
                                     <div class="newPasswordConfirm-container">
@@ -492,8 +499,7 @@
                     </div>
                 </div>
             </div>
-        </div>
 </body>
-<SCript src="/static/js/MypageSettings/MypageSettings.js"></SCript>
+<script src="/static/js/MypageSettings/MypageSettings.js"></script>
 
 </html>
