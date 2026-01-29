@@ -25,3 +25,27 @@ buttons.forEach((btn) => {
         }
     });
 });
+
+// 댓글 토글 버튼
+
+document
+    .querySelectorAll(".CommunityArea_replyToggle__Qu23y")
+    .forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            toggle.classList.toggle("active");
+
+            const container = toggle.closest(".CommunityArea_container__F_81k");
+
+            const replyInput = container.querySelector(
+                ".ReplyInput_replyInputContainer__5BSrT"
+            );
+            const replyItem = container.querySelector(
+                ".ReplyItem_replyContainer__1E_fe"
+            );
+
+            const isOpen = toggle.classList.contains("active");
+
+            if (replyInput) replyInput.style.display = isOpen ? "flex" : "none";
+            if (replyItem) replyItem.style.display = isOpen ? "block" : "none";
+        });
+    });

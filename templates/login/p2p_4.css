@@ -1635,6 +1635,7 @@ button.PopMenu_toggle__3tr5e, button.PopMenu_menu__V1A_r {
 
 .CommentContainer_commentContainer__1IcYK .CommentContainer_moreButton__Ajxy1, .CommentContainer_commentContainer__1IcYK .CommentContainer_allButton__1IIKj {
     margin-top: 40px;
+    padding: 10px;
 }
 
 .Button_button__1U5se.Button_tint__1II__.Button_gray__2MMct {
@@ -4309,4 +4310,315 @@ a, button {
 svg:not(:root) {
     overflow-clip-margin: content-box;
     overflow: hidden;
+}
+
+/* 댓글 추가 작업, 2026. 01. 26. mon */
+
+.ReplyInput_replyInputContainer__5BSrT {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_avatarWrapper__2_Lx3 {
+    position: relative;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_avatarWrapper__2_Lx3 .ReplyInput_avatar__2CwvE {
+    margin-right: 8px;
+    min-width: 32px;
+}
+
+.Avatar_avatar__2faOY {
+    display: inline-flex;
+    position: relative;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.Avatar_avatar__2faOY>.Avatar_inner__33IXg {
+    display: inline-block;
+    border: 1px solid #e9ecef;
+    border-radius: 100%;
+}
+
+.Avatar_avatar__2faOY>.Avatar_inner__33IXg>img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_contentArea__1kqCV {
+    display: flex;
+    width: 100%;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_contentArea__1kqCV .ReplyInput_needLogin__3H8cL {
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_contentArea__1kqCV .ReplyInput_needLogin__3H8cL .ReplyInput_inputArea__3ooj- {
+    background-color: #f9fafb;
+    height: 40px;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_contentArea__1kqCV .ReplyInput_inputArea__3ooj- {
+    min-height: 40px;
+}
+
+.Input_input__327zq.Input_sm__1GPI7 {
+    height: 32px;
+    min-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* 화면 넓이로 */
+.Input_input__327zq {
+    display: block;
+    transition-property: border-color, background-color, color;
+    transition-duration: .15s;
+    outline: none;
+    border: 1px solid #dde2e6;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0 16px;
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    color: #212529;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.ReplyInput_replyInputContainer__5BSrT .ReplyInput_contentArea__1kqCV .ReplyInput_needLogin__3H8cL {
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.ReplyItem_replyContainer__1E_fe {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.ReplyItem_replyContainer__1E_fe .ReplyItem_avatarWrapper__cEyav {
+    position: relative;
+}
+
+.Avatar_avatar__2faOY {
+    display: inline-flex;
+    position: relative;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.Avatar_avatar__2faOY>.Avatar_inner__33IXg {
+    display: inline-block;
+    border: 1px solid #e9ecef;
+    border-radius: 100%;
+}
+
+.Avatar_avatar__2faOY>.Avatar_inner__33IXg>img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/*댓글 스타일 적용됨*/
+.ReplyItem_replyContainer__1E_fe .ReplyItem_contentArea__rQsiO {
+    margin-left: 8px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    padding: 12px;
+    width: calc(100% - 40px);
+}
+
+.ReplyContentHeader_replyHeaderContainer__3ni4G {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* 댓글 스타일이 잘 적용됨 */
+.ReplyItem_replyContainer__1E_fe .ReplyItem_contentArea__rQsiO .ReplyItem_fullContent__3m4kT {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    word-break: break-all;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.CommentReaction_container__3eEVO {
+    display: flex;
+    align-items: center;
+}
+
+.CommentReaction_container__3eEVO .CommentReaction_wrapper__3Dfin {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #495057;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+element.style {
+    background-image: url(https://cdn3.wadiz.kr/community/images/SystemIcon_favorite--outline.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.CommentReaction_container__3eEVO .CommentReaction_wrapper__3Dfin .CommentReaction_icon__1RzB4 {
+    width: 16px;
+    height: 16px;
+}
+
+.CommentReaction_container__3eEVO .CommentReaction_wrapper__3Dfin .CommentReaction_count__2RVQP {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* 메이커 뱃지 */
+.ReplyContentHeader_replyHeaderContainer__3ni4G .ReplyContentHeader_left__86q92 .ReplyContentHeader_badgeArea__1ogIl {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.LabelBadge_container__2BaFG {
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.ReplyContentHeader_replyHeaderContainer__3ni4G .ReplyContentHeader_left__86q92 .ReplyContentHeader_badgeArea__1ogIl .ReplyContentHeader_maker__3JtUi {
+    margin-left: 4px;
+}
+
+.LabelBadge_badge__1PgGU.LabelBadge_blue__2MUOp.LabelBadge_solid__25RIc {
+    border: solid 1px #557cf2;
+    background-color: #557cf2;
+    color: #fff;
+}
+
+.LabelBadge_badge__1PgGU.LabelBadge_sm__JGk3O {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 4px;
+    height: 18px;
+}
+
+.LabelBadge_badge__1PgGU {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.ReplyContentHeader_replyHeaderContainer__3ni4G .ReplyContentHeader_left__86q92 .ReplyContentHeader_date__2GDcj {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-left: 4px;
+    color: #adb5bd;
+    flex-shrink: 0;
+}
+
+
+/* 니티드 바이, 메이커, 날짜  3개  flex  정렬 */
+.ReplyContentHeader_replyHeaderContainer__3ni4G .ReplyContentHeader_left__86q92 {
+    display: flex;
+    align-items: center;
+    min-width: calc(100% - 18px);
+}
+
+/* 댓글 목록 눌렀을때 화살표 변경 스타일 */
+
+
+
+/* 댓글 입력창 + 댓글 목록 기본 숨김 */
+
+/*
+.ReplyInput_replyInputContainer__5BSrT,
+.ReplyItem_replyContainer__1E_fe {
+    display: none;
+}
+*/
+
+
+
+.CommunityArea_replyToggle__Qu23y.active .reply-arrow {
+    transform: rotate(180deg);
+}*/
+
+
+/* 댓글 전체 영역 기본 숨김 */
+
+
+/* 화살표 애니메이션 */
+.reply-arrow {
+    transition: transform 0.2s ease;
+}
+
+/* 열렸을 때 */
+.CommunityArea_replyToggle__Qu23y.active .reply-arrow {
+    transform: rotate(180deg);
+}
+
+.reply-area {
+    display: none;
+}
+
+.reply-area.open {
+    display: block;
+    margin-top: 12px;
 }

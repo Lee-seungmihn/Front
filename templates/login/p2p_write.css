@@ -2427,6 +2427,9 @@ a, button {
     position: relative;
 }
 
+
+/* Image 버튼 스타일 */
+
 .ImageFieldContent_popper__ZjhkO {
     display: inline-block;
     vertical-align: bottom;
@@ -4826,3 +4829,257 @@ a, button {
     align-items: center;
     vertical-align: top;
 }
+
+/* 이미지 썸네일 스타일 적용 2026. 1. 28*/
+
+.BlindText_textBlind__NTY4O {
+    position: absolute;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.UploadedImageList_container__YTYxY {
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    /* padding-inline-start: 40px; */
+
+    padding-inline-start: 0px;    
+    unicode-bidi: isolate;
+}
+
+.UploadedImageList_container__YTYxY .UploadedImageList_listItem__YzA5N:first-child {
+    margin-left: 0px;
+}
+
+.UploadedImageList_container__YTYxY .UploadedImageList_listItem__YzA5N {
+    margin-left: 8px;
+    /* padding: 0 0 0 3px; */
+
+}
+
+[data-rbd-drag-handle-context-id="3"] {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+li {
+    display: list-item;
+    unicode-bidi: isolate;
+}
+
+.UploadedImage_container__ODBkN {
+    display: flex;
+    position: relative;
+    border-radius: 4px;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    width: 120px;
+    height: 88px;
+    overflow: hidden;
+}
+
+.UploadedImage_container__ODBkN .UploadedImage_editButton__MTU4M {
+    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    border-radius: 32px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px 4px;
+    height: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.UploadedImage_container__ODBkN button {
+    cursor: pointer;
+    padding: 0px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+}
+
+a, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+
+/* 제거 절대 좌표 */
+.UploadedImage_container__ODBkN .UploadedImage_removeButton__NGJkZ {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border: 1px solid rgb(233, 236, 239);
+    border-radius: 32px;
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 20px;
+}
+
+.UploadedImage_container__ODBkN button {
+    cursor: pointer;
+    padding: 0px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+.UploadedImage_container__ODBkN .UploadedImage_removeButton__NGJkZ svg {
+    transform: scale(0.8);
+}
+
+.WithProps_icon__NDI4N {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+
+/* 체크 박스 */
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+input, textarea {
+    background: none;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:checked+.Checkbox-module_icon__cf099, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:indeterminate+.Checkbox-module_icon__cf099 {
+    border: solid 1px #00b2b2;
+    background-color: #00c4c4;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_labeled__89ffe .Checkbox-module_icon__cf099 {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 .Checkbox-module_icon__cf099 {
+    width: 16px;
+    height: 16px;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 {
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    transition-property: opacity, border-color, background-color;
+    transition-duration: .15s;
+    opacity: 1;
+    z-index: 1;
+    border: 1px solid #cdd3d8;
+    border-radius: 2px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_removeIcon__06586 {
+    opacity: 0;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-property: opacity, width, fill;
+    transition-duration: .15s;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 svg {
+    width: 10px;
+    height: 10px;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.WithProps-module_icon__d564b {
+    display: block;
+    transform: scale(1);
+    transition: transform .3s ease-out;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d:checked+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64 {
+    opacity: 1;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_checkIcon__0ab64, .Checkbox-module_checkbox__69023 .Checkbox-module_input__7487d+.Checkbox-module_icon__cf099 .Checkbox-module_removeIcon__06586 {
+    opacity: 0;
+}
+
+.Checkbox-module_checkbox__69023 .Checkbox-module_icon__cf099 svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-property: opacity, width, fill;
+    transition-duration: .15s;
+}
+
+.Checkbox-module_checkbox__69023.Checkbox-module_sm__1dbd2 svg {
+    width: 10px;
+    height: 10px;
+}
+
+/* 와디즈 토글 문제 해결 솔루션 */
+
+.Checkbox-module_checkbox__69023 {
+    width: fit-content;   /* 또는 inline-flex */
+    position: relative;
+    z-index: 1;
+  }
+  
+  .AddressInputWrapper,
+  input[type="button"] {
+    position: relative;
+    z-index: 2;
+  }
