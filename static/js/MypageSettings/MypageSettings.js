@@ -3,6 +3,7 @@ const body = document.querySelector("body");
 const overlay = document.querySelector(".ConfirmModal_overlay");
 const modals = document.querySelectorAll(".ConfirmModal_confirmModal");
 const passwordModal = document.getElementById("passwordModal");
+const modal7 = document.getElementById("modal7");
 
 console.log("passwordModal:", passwordModal); // 디버깅
 
@@ -38,8 +39,11 @@ closeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
         overlay.style.display = "none";
         modals.forEach(m => m.style.display = "none");
+        modal7.style.display = "none";
     });
 });
+
+
 
 // 이메일 확인 버튼 클릭 시 비밀번호 확인 모달 열기
 const emailOkaymodal = emailModal.querySelector(".buttonEmail_okay");
@@ -150,3 +154,55 @@ document.addEventListener('click', (e) => {
         }, 3000);
     }
 });
+
+
+document.querySelectorAll('.toggle_input').forEach(toggle => {
+    toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+            console.log(`${toggle.id} ON 상태`);
+        } else {
+            console.log(`${toggle.id} OFF 상태`);
+        }
+    });
+});
+
+
+
+// 메뉴 아이템들 선택
+const menuItems2 = document.querySelectorAll(".settings_menusArea .menuItem_container");
+
+menuItems2.forEach(item => {
+    const title = item.querySelector(".menuItem_title").textContent.trim();
+
+    item.addEventListener("click", () => {
+        console.log("Menu clicked:", title);
+
+        // 기존 모달 숨기기
+        modals.forEach(m => m.style.display = "none");
+        overlay.style.display = "flex";
+
+        if (title === "닉네임") {
+            nicknameModal.style.display = "flex";
+        } else if (title === "이메일") {
+            emailModal.style.display = "flex";
+        } else if (title === "지역") { 
+            if (modal7) {
+                modal7.style.display = "flex";
+            }
+        }
+    });
+});
+//  토글 버튼 선택
+const toggle = document.querySelector('.toggle_input');
+const label = document.querySelector('.toggle_switch'); // 토글 레이블
+
+toggle.addEventListener("click", () => {
+    if (toggle.checked) {
+        // 체크되어 있으면 ON 상태
+        label.classList.add('toggle_active');
+    } else {
+        label.classList.remove('toggle_active');
+    }
+});
+
+
