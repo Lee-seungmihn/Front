@@ -12,6 +12,22 @@
 <link rel="stylesheet" href="../static/css/components/navigations/navigation-m.css" />
 <link rel="stylesheet" href="../static/css/components/modals/modal-m.css" />
 <link rel="stylesheet" href="../static/css/main/style.css" />
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../static/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../static/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../static/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../static/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../static/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="../static/images/favicon/manifest.json">
 <title>Main</title>
 </head>
 <body>
@@ -727,7 +743,7 @@
                             </span>
                         </button>
                         <!-- 토스트 기능 넣기 -->
-                        <button class="button button-size button-mint button-confirm" type="button" onclick=" kakaoPay();">
+                        <button class="button button-size button-mint button-confirm" type="button" onclick="modalCloses();bannerOpen();">
                             <span>
                                 <span>에너지 기여하기</span>
                             </span>
@@ -818,94 +834,6 @@
 <script src="../static/js/api/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-<script src="https://js.bootpay.co.kr/bootpay-5.0.2.min.js"></script>
-<script>
-    const kakaoPay = async () => {
-        try {
-            const response = await Bootpay.requestPayment({
-                application_id: '[자바스크립트키]',
-                price: 1000,
-                order_name: '테스트결제',
-                order_id: 'TEST_ORDER_ID',
-                pg: '카카오페이',
-                method: "easy",
-                tax_free: 0,
-                user: {
-                    id: '회원아이디',
-                    username: '이승민',
-                    phone: '01000000000',
-                    email: 'test@test.com',
-                },
-                items: [
-                    {
-                        id: 'item_id',
-                        name: '테스트아이템',
-                        qty: 1,
-                        price: 1000,
-                    },
-                ],
-                extra: {
-                    open_type: 'iframe',
-                    card_quota: '0,2,3',
-                    escrow: false,
-                },
-            });
-            switch (response.event) {
-                case 'issued':
-                    // 가상계좌 입금 완료 처리
-                    // alert('입금을 완료했어요.');
-                    modalCloses();
-                    bannerOpen();
-                    break;
-                case 'done':
-                    // 결제 완료 처리
-                    console.log(response);
-                    // alert('결제를 완료했어요.');
-                    modalCloses();
-                    bannerOpen();
-                    break;
-                case 'confirm': //payload.extra.separately_confirmed = true; 일 경우 승인 전 해당 이벤트가 호출됨
-                    console.log(response.receipt_id);
-                    // alert('결제 승인이 필요해요.');
-                    /**
-                     * 1. 클라이언트 승인을 하고자 할때
-                     * // validationQuantityFromServer(); //예시) 재고확인과 같은 내부 로직을 처리하기 한다.
-                     */
-                    const confirmedData = await Bootpay.confirm(); //결제를 승인한다
-                    if (confirmedData.event === 'done') {
-                        //결제 성공
-                        // alert('결제성공?');
-                    }
-
-                    /**
-                     * 2. 서버 승인을 하고자 할때
-                     * // requestServerConfirm(); //예시) 서버 승인을 할 수 있도록  API를 호출한다. 서버에서는 재고확인과 로직 검증 후 서버승인을 요청한다.
-                     * Bootpay.destroy(); //결제창을 닫는다.
-                     */
-                    // alert('결제성공?');
-                    break;
-            }
-        } catch (e) {
-            // 결제 진행중 오류 발생
-            // e.error_code - 부트페이 오류 코드
-            // e.pg_error_code - PG 오류 코드
-            // e.message - 오류 내용
-            console.log(e.message);
-            switch (e.event) {
-                case 'cancel':
-                    // 사용자가 결제창을 닫을때 호출
-                    console.log(e.message);
-                    alert('결제를 취소했어요.');
-                    break;
-                case 'error':
-                    // 결제 승인 중 오류 발생시 호출
-                    console.log(e.error_code);
-                    alert('결제를 다시 시도해주세요.');
-                    break;
-            }
-        }
-    };
-</script>
 <script>
     let zzOneData = null;
     let currentYear = '2024';
